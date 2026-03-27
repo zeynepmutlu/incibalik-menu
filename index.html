@@ -135,37 +135,25 @@
     }
 
     .hero-seal {
-      width: 90px;
-      height: 90px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(245, 240, 233, 0.96));
-      border: 1px solid rgba(200, 165, 106, 0.34);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.20);
-      overflow: hidden;
-      display: grid;
-      place-items: center;
+      width: 92px;
+      height: auto;
+      background: none;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      overflow: visible;
+      display: block;
       position: relative;
     }
 
     .hero-seal::before {
-      content: "";
-      position: absolute;
-      inset: 8px;
-      border-radius: 50%;
-      border: 1px solid rgba(200, 165, 106, 0.40);
-      pointer-events: none;
-      z-index: 2;
+      display: none;
     }
 
     .hero-logo-img {
-      width: 170%;
-      max-width: none;
-      height: 170%;
-      object-fit: cover;
-      object-position: center 32%;
+      width: 100%;
+      height: auto;
       display: block;
-      position: relative;
-      z-index: 1;
     }
 
     .lang-switch {
@@ -526,7 +514,7 @@
 
       .hero-seal {
         width: 74px;
-        height: 74px;
+        height: auto;
       }
 
       .section-toggle {
