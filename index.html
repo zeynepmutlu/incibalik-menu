@@ -16,14 +16,9 @@
       --bg-2: #08203b;
       --bg-3: #0d2b4d;
       --navy: #102d4b;
-      --navy-soft: #173d66;
       --gold: #c8a56a;
-      --gold-soft: rgba(200, 165, 106, 0.18);
-      --line: rgba(16, 39, 66, 0.10);
       --shadow: 0 24px 60px rgba(0, 8, 18, 0.34);
-      --shadow-soft: 0 14px 32px rgba(0, 10, 22, 0.18);
-      --sticky-offset: 88px;
-      --hero-art: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 220 320'%3E%3Cg fill='none' stroke='%23c8a56a' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round' opacity='0.95'%3E%3Cpath d='M112 20 C80 70 63 122 68 185 C72 238 95 278 110 300 C126 277 149 236 152 184 C155 132 139 76 112 20Z'/%3E%3Cpath d='M110 299 C80 260 44 244 18 250 C40 225 53 205 57 181 C39 152 28 128 18 101 C46 111 83 101 109 74'/%3E%3Cpath d='M111 299 C141 260 177 244 203 250 C181 225 168 205 164 181 C182 152 193 128 203 101 C175 111 138 101 112 74'/%3E%3Cpath d='M97 57 C114 79 123 107 125 150 C126 192 121 236 111 279'/%3E%3Cpath d='M91 89 C112 102 126 123 130 168'/%3E%3Cpath d='M87 123 C105 136 117 155 121 193'/%3E%3Cpath d='M82 159 C98 171 109 186 112 212'/%3E%3Cpath d='M75 197 C89 208 98 219 101 240'/%3E%3Cpath d='M123 92 C104 105 94 127 90 170'/%3E%3Cpath d='M129 127 C113 140 103 160 100 194'/%3E%3Cpath d='M134 163 C120 174 111 191 108 214'/%3E%3Ccircle cx='125' cy='92' r='4.2'/%3E%3C/g%3E%3C/svg%3E");
+      --sticky-offset: 84px;
     }
 
     * {
@@ -40,14 +35,14 @@
       font-family: "Manrope", sans-serif;
       color: #f7f7f7;
       background:
-        radial-gradient(circle at 20% 0%, rgba(200, 165, 106, 0.12), transparent 0 18%),
-        radial-gradient(circle at 88% 18%, rgba(25, 69, 113, 0.30), transparent 0 22%),
+        radial-gradient(circle at 20% 0%, rgba(200, 165, 106, 0.10), transparent 0 18%),
+        radial-gradient(circle at 88% 18%, rgba(25, 69, 113, 0.26), transparent 0 22%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 42%, var(--bg-3) 100%);
     }
 
     .shell {
       width: 100%;
-      padding: 20px 14px 44px;
+      padding: 16px 12px 36px;
     }
 
     .container {
@@ -59,11 +54,12 @@
       position: relative;
       overflow: hidden;
       border-radius: 30px;
-      padding: 20px;
-      margin-bottom: 14px;
+      min-height: 360px;
+      margin-bottom: 12px;
       color: #fff;
       background:
-        radial-gradient(circle at 82% 14%, rgba(255, 255, 255, 0.08), transparent 0 16%),
+        linear-gradient(180deg, rgba(3, 13, 24, 0.20), rgba(3, 13, 24, 0.55)),
+        url("./hero-bg.jpg") center 34% / cover no-repeat,
         linear-gradient(145deg, rgba(7, 22, 40, 0.98), rgba(14, 45, 76, 0.96));
       box-shadow: var(--shadow);
       border: 1px solid rgba(255, 255, 255, 0.08);
@@ -73,129 +69,124 @@
     .hero::before {
       content: "";
       position: absolute;
-      inset: auto 18px -18px auto;
-      width: 150px;
-      height: 150px;
-      background-image: var(--hero-art);
-      background-repeat: no-repeat;
-      background-size: contain;
-      opacity: 0.05;
-      transform: rotate(-6deg);
-      pointer-events: none;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(4, 13, 25, 0.18) 0%, rgba(4, 13, 25, 0.30) 34%, rgba(4, 13, 25, 0.72) 100%);
       z-index: 0;
+      pointer-events: none;
     }
 
-    .hero-top {
+    .hero-inner {
       position: relative;
       z-index: 1;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 154px;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .brand-block {
-      min-width: 0;
-      padding-top: 0;
-    }
-
-    h1 {
-      margin: 0;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 50px;
-      line-height: 0.94;
-      letter-spacing: 0.01em;
-      font-weight: 700;
-    }
-
-    .hero-subtitle {
-      margin-top: 12px;
-      max-width: 280px;
-      font-size: 14px;
-      line-height: 1.55;
-      color: rgba(255, 255, 255, 0.82);
-    }
-
-    .hero-note {
-      margin-top: 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px;
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.90);
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 999px;
-      padding: 9px 14px;
-      letter-spacing: 0.03em;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-right {
+      min-height: 360px;
+      padding: 18px 18px 24px;
       display: flex;
       flex-direction: column;
+    }
+
+    .hero-topbar {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(10, 20, 35, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .lang-btn {
+      min-width: 52px;
+      border-radius: 999px;
+      padding: 9px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--navy);
+      border-color: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+    }
+
+    .hero-center {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-      position: relative;
-      z-index: 1;
-      min-width: 154px;
-      padding: 14px 12px;
-      border-radius: 24px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      text-align: center;
+      gap: 10px;
+      padding: 8px 12px 4px;
     }
 
     .hero-seal {
-      width: 102px;
+      width: 68px;
       display: block;
-      position: relative;
-      filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.16));
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.26));
     }
 
     .hero-logo-img {
       width: 100%;
       height: auto;
       display: block;
+      object-fit: contain;
     }
 
-    .lang-switch {
-      display: flex;
-      gap: 8px;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .lang-btn {
-      min-width: 50px;
-      border-radius: 999px;
-      padding: 9px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
+    h1 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 52px;
+      line-height: 0.95;
+      letter-spacing: 0.04em;
       font-weight: 700;
-      cursor: pointer;
+      text-transform: uppercase;
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.38);
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.90);
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
+    }
+
+    .hero-note {
+      align-self: center;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.92);
+      background: rgba(8, 18, 32, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      padding: 10px 15px;
+      letter-spacing: 0.03em;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
-      transition: 0.2s ease;
-    }
-
-    .lang-btn.active {
-      background: #fff;
-      color: var(--navy);
-      border-color: #fff;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
 
     .chips-wrap {
       position: sticky;
       top: 4px;
       z-index: 60;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       padding: 4px 0 8px;
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
@@ -218,17 +209,17 @@
 
     .chips-bar::after {
       content: "";
-      flex: 0 0 10px;
+      flex: 0 0 8px;
     }
 
     .category-chip {
       flex: 0 0 auto;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 999px;
-      padding: 8px 14px;
+      padding: 7px 13px;
       background: rgba(255, 255, 255, 0.98);
       color: var(--navy);
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
       white-space: nowrap;
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
@@ -252,7 +243,7 @@
     #menu {
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
     }
 
     .menu-section {
@@ -260,7 +251,6 @@
       overflow: hidden;
       border-radius: 0;
       border: 1px solid rgba(200, 165, 106, 0.78);
-      box-shadow: none;
       background: linear-gradient(180deg, rgba(5, 22, 42, 0.98), rgba(7, 27, 51, 0.98));
       scroll-margin-top: calc(var(--sticky-offset) + 10px);
       isolation: isolate;
@@ -270,8 +260,8 @@
     .menu-section::after {
       content: "";
       position: absolute;
-      left: 26px;
-      right: 26px;
+      left: 18px;
+      right: 18px;
       height: 1px;
       background: rgba(200, 165, 106, 0.55);
       pointer-events: none;
@@ -279,11 +269,11 @@
     }
 
     .menu-section::before {
-      top: 26px;
+      top: 18px;
     }
 
     .menu-section::after {
-      bottom: 26px;
+      bottom: 18px;
     }
 
     .section-toggle {
@@ -294,10 +284,10 @@
       background: transparent;
       text-align: center;
       color: #fff;
-      padding: 40px 20px 34px;
+      padding: 30px 18px 28px;
       display: block;
       cursor: pointer;
-      min-height: 162px;
+      min-height: 126px;
     }
 
     .section-left,
@@ -308,10 +298,10 @@
     .section-title {
       margin: 0;
       font-family: "Cormorant Garamond", serif;
-      font-size: 48px;
-      line-height: 0.92;
+      font-size: 36px;
+      line-height: 0.95;
       font-weight: 600;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
       color: #f7f1e8;
       text-align: center;
@@ -320,13 +310,13 @@
     }
 
     .section-arrow {
-      width: 28px;
-      height: 28px;
-      margin: 18px auto 0;
+      width: 24px;
+      height: 24px;
+      margin: 12px auto 0;
       display: grid;
       place-items: center;
       color: rgba(247, 241, 232, 0.78);
-      font-size: 16px;
+      font-size: 15px;
       transition: transform .22s ease, opacity .22s ease;
     }
 
@@ -338,7 +328,7 @@
       position: relative;
       z-index: 1;
       display: none;
-      padding: 0 36px 42px;
+      padding: 0 28px 34px;
     }
 
     .menu-section.open .section-content {
@@ -349,9 +339,9 @@
       content: "";
       display: block;
       width: 56%;
-      max-width: 420px;
+      max-width: 320px;
       height: 1px;
-      margin: 0 auto 24px;
+      margin: 0 auto 18px;
       background: rgba(200, 165, 106, 0.52);
     }
 
@@ -364,7 +354,7 @@
     .menu-item {
       display: block;
       text-align: center;
-      padding: 18px 0;
+      padding: 15px 0;
       border-bottom: none;
     }
 
@@ -374,7 +364,7 @@
 
     .item-name {
       font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
+      font-size: 25px;
       line-height: 1.12;
       font-weight: 600;
       letter-spacing: 0.02em;
@@ -384,9 +374,9 @@
     .item-description {
       margin: 8px auto 0;
       max-width: 92%;
-      font-size: 14px;
-      line-height: 1.7;
-      color: rgba(247, 241, 232, 0.70);
+      font-size: 13px;
+      line-height: 1.65;
+      color: rgba(247, 241, 232, 0.72);
       font-style: italic;
       font-weight: 400;
     }
@@ -394,7 +384,7 @@
     .item-price {
       display: block;
       margin-top: 8px;
-      font-size: 17px;
+      font-size: 16px;
       line-height: 1.2;
       font-weight: 700;
       letter-spacing: 0.02em;
@@ -434,44 +424,99 @@
       text-transform: none;
     }
 
-    @media (max-width: 680px) {
-      .section-title {
-        margin: 0;
-        font-family: "Cormorant Garamond", serif;
-        font-size: 48px;
-        line-height: 0.92;
-        font-weight: 600;
-        letter-spacing: 0.06em;
-        text-transform: uppercase;
-        color: #f7f1e8;
-        text-align: center;
-        word-break: break-word;
-        text-wrap: balance;
+    @media (max-width: 520px) {
+      :root {
+        --sticky-offset: 78px;
       }
 
-      @media (max-width: 520px) {
-        :root {
-          --sticky-offset: 84px;
-        }
+      .shell {
+        padding: 12px 10px 30px;
+      }
 
-        .shell {
-          padding: 14px 10px 32px;
-        }
+      .hero {
+        min-height: 330px;
+        border-radius: 28px;
+      }
 
-        .hero {
-          position: relative;
-          overflow: hidden;
-          border-radius: 30px;
-          padding: 20px;
-          margin-bottom: 14px;
-          color: #fff;
-          background:
-            radial-gradient(circle at 82% 14%, rgba(255, 255, 255, 0.08), transparent 0 16%),
-            linear-gradient(145deg, rgba(7, 22, 40, 0.98), rgba(14, 45, 76, 0.96));
-          box-shadow: var(--shadow);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          isolation: isolate;
-        }
+      .hero-inner {
+        min-height: 330px;
+        padding: 14px 14px 20px;
+      }
+
+      .hero-seal {
+        width: 60px;
+      }
+
+      h1 {
+        font-size: 44px;
+        letter-spacing: 0.035em;
+      }
+
+      .hero-subtitle {
+        font-size: 13px;
+        letter-spacing: 0.09em;
+      }
+
+      .hero-note {
+        font-size: 10px;
+        padding: 9px 13px;
+      }
+
+      .lang-btn {
+        min-width: 48px;
+        padding: 8px 13px;
+      }
+
+      .chips-wrap {
+        margin-bottom: 10px;
+      }
+
+      .category-chip {
+        padding: 7px 12px;
+        font-size: 11px;
+      }
+
+      .menu-section::before,
+      .menu-section::after {
+        left: 14px;
+        right: 14px;
+      }
+
+      .section-toggle {
+        padding: 24px 14px 22px;
+        min-height: 112px;
+      }
+
+      .section-title {
+        font-size: 30px;
+        letter-spacing: 0.045em;
+      }
+
+      .section-arrow {
+        margin-top: 10px;
+        font-size: 14px;
+      }
+
+      .section-content {
+        padding: 0 20px 28px;
+      }
+
+      .section-content::before {
+        margin-bottom: 16px;
+      }
+
+      .item-name {
+        font-size: 22px;
+      }
+
+      .item-description {
+        font-size: 12px;
+      }
+
+      .item-price {
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
 
@@ -479,21 +524,21 @@
   <div class="shell">
     <div class="container">
       <header class="hero">
-        <div class="hero-top">
-          <div class="brand-block">
-            <h1 id="site-title">İnci Balık</h1>
-            <div class="hero-subtitle" id="hero-subtitle">Seçkin deniz ürünleri menüsü.</div>
-            <div class="hero-note" id="hero-note">QR menü • Güncel fiyatlar</div>
-          </div>
-
-          <div class="hero-right">
-            <div class="hero-seal" aria-hidden="true">
-              <img class="hero-logo-img" src="./incibaliklogo.png" alt="İnci Balık Logo">
-            </div>
+        <div class="hero-inner">
+          <div class="hero-topbar">
             <div class="lang-switch">
               <button id="tr-btn" class="lang-btn active" type="button">TR</button>
               <button id="en-btn" class="lang-btn" type="button">EN</button>
             </div>
+          </div>
+
+          <div class="hero-center">
+            <div class="hero-seal" aria-hidden="true">
+              <img class="hero-logo-img" src="./incibaliklogo.png" alt="İnci Balık Logo">
+            </div>
+            <h1 id="site-title">İnci Balık</h1>
+            <div class="hero-subtitle" id="hero-subtitle">Denizden Gelen Tatlar</div>
+            <div class="hero-note" id="hero-note">QR menü • Güncel fiyatlar</div>
           </div>
         </div>
       </header>
@@ -522,13 +567,13 @@
 
     const uiText = {
       tr: {
-        subtitle: "Seçkin deniz ürünleri menüsü.",
+        subtitle: "Denizden Gelen Tatlar",
         heroNote: "QR menü • Güncel fiyatlar",
         footer: "Afiyetle.",
         errorPrefix: "Hata:"
       },
       en: {
-        subtitle: "Refined seafood menu.",
+        subtitle: "Flavours from the Sea",
         heroNote: "QR menu • Updated prices",
         footer: "Bon appétit.",
         errorPrefix: "Error:"
@@ -597,15 +642,15 @@
     }
 
     function getScrollTarget(section) {
-      const chipsWrap = document.querySelector('.chips-wrap');
+      const chipsWrap = document.querySelector(".chips-wrap");
       const chipsHeight = chipsWrap ? chipsWrap.offsetHeight : 0;
-      const extraGap = window.innerWidth <= 520 ? 10 : 16;
+      const extraGap = window.innerWidth <= 520 ? 8 : 12;
       return Math.max(0, window.scrollY + section.getBoundingClientRect().top - chipsHeight - extraGap);
     }
 
     function scrollToSection(section) {
       const targetTop = getScrollTarget(section);
-      window.scrollTo({ top: targetTop, behavior: 'smooth' });
+      window.scrollTo({ top: targetTop, behavior: "smooth" });
     }
 
     function openSectionById(categoryId, shouldScroll = false) {
