@@ -201,13 +201,13 @@
 
     .chips-wrap {
       position: sticky;
-      top: 6px;
-      z-index: 50;
-      margin-bottom: 18px;
-      padding: 6px 0 10px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      background: linear-gradient(180deg, rgba(4, 20, 39, 0.92) 0%, rgba(4, 20, 39, 0.80) 72%, rgba(4, 20, 39, 0) 100%);
+      top: 0;
+      z-index: 60;
+      margin-bottom: 20px;
+      padding: 8px 0 12px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: linear-gradient(180deg, rgba(4, 20, 39, 0.96) 0%, rgba(4, 20, 39, 0.84) 78%, rgba(4, 20, 39, 0) 100%);
     }
 
     .chips-bar {
@@ -216,12 +216,14 @@
       overflow-x: auto;
       overflow-y: hidden;
       padding: 2px 12px 8px 2px;
-      scrollbar-width: thin;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
       scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
     }
 
     .chips-bar::-webkit-scrollbar {
-      height: 6px;
+      height: 0;
+      display: none;
     }
 
     .chips-bar::-webkit-scrollbar-thumb {
@@ -276,7 +278,7 @@
       box-shadow: none;
       background:
         linear-gradient(180deg, rgba(5, 22, 42, 0.985), rgba(7, 27, 51, 0.99));
-      scroll-margin-top: var(--sticky-offset);
+      scroll-margin-top: 132px;
       isolation: isolate;
       padding: 18px;
     }
@@ -309,8 +311,12 @@
       background: transparent;
       text-align: center;
       color: #fff;
-      padding: 54px 20px 16px;
-      display: block;
+      padding: 42px 18px 12px;
+      min-height: 230px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
       cursor: pointer;
     }
 
@@ -324,20 +330,22 @@
 
     .section-title {
       margin: 0;
+      max-width: 82%;
       font-family: "Cormorant Garamond", serif;
-      font-size: 56px;
-      line-height: 0.95;
+      font-size: clamp(40px, 8vw, 56px);
+      line-height: 0.92;
       font-weight: 600;
-      letter-spacing: 0.10em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
       color: #f7f1e8;
       text-align: center;
+      margin-inline: auto;
     }
 
     .section-arrow {
       width: 30px;
       height: 30px;
-      margin: 18px auto 0;
+      margin: 12px auto 0;
       display: grid;
       place-items: center;
       border-radius: 999px;
@@ -356,7 +364,7 @@
       position: relative;
       z-index: 1;
       display: none;
-      padding: 8px 28px 54px;
+      padding: 0 28px 46px;
     }
 
     .menu-section.open .section-content {
@@ -366,10 +374,10 @@
     .section-content::before {
       content: "";
       display: block;
-      width: 72%;
+      width: 58%;
       max-width: 280px;
       height: 1px;
-      margin: 0 auto 28px;
+      margin: 0 auto 26px;
       background: rgba(200, 165, 106, 0.52);
     }
 
@@ -388,7 +396,7 @@
       position: relative;
       display: block;
       text-align: center;
-      padding: 18px 0 20px;
+      padding: 14px 0 18px;
       border-bottom: none;
       transition: none;
     }
@@ -399,7 +407,7 @@
     }
 
     .menu-item+.menu-item {
-      margin-top: 4px;
+      margin-top: 2px;
     }
 
     .item-name-wrap {
@@ -408,10 +416,10 @@
 
     .item-name {
       font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      line-height: 1.1;
+      font-size: 24px;
+      line-height: 1.12;
       font-weight: 600;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       color: #f7f1e8;
     }
 
@@ -427,13 +435,13 @@
 
     .item-price {
       display: block;
-      margin-top: 14px;
+      margin-top: 10px;
       align-self: unset;
       white-space: nowrap;
-      font-size: 20px;
+      font-size: 18px;
       line-height: 1.1;
       font-weight: 600;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
       color: #f0dfbf;
       padding: 0;
       background: transparent;
@@ -449,8 +457,8 @@
       font-size: 12px;
       line-height: 1.7;
       padding-bottom: 0;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-transform: none;
     }
 
     .site-footer {
@@ -472,9 +480,9 @@
 
     .site-footer-signature {
       font-size: 11px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.03em;
       color: rgba(200, 165, 106, 0.80);
-      text-transform: uppercase;
+      text-transform: none;
     }
 
     @media (max-width: 680px) {
@@ -500,47 +508,112 @@
       }
 
       h1 {
-        font-size: 50px;
+        font-size: 44px;
+        line-height: 0.95;
       }
 
       .hero-subtitle {
-        max-width: 220px;
-        font-size: 13px;
+        max-width: 190px;
+        font-size: 12px;
+        line-height: 1.55;
       }
 
       .hero-seal {
-        width: 96px;
+        width: 88px;
         height: auto;
       }
 
+      .hero-note {
+        font-size: 11px;
+        padding: 8px 13px;
+      }
+
+      .chips-wrap {
+        top: 0;
+        margin-bottom: 14px;
+        padding: 6px 0 10px;
+      }
+
+      .chips-bar {
+        gap: 8px;
+        padding-right: 8px;
+      }
+
+      .category-chip {
+        padding: 11px 18px;
+        font-size: 12px;
+        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+      }
+
+      .menu-section {
+        padding: 14px;
+        scroll-margin-top: 120px;
+      }
+
+      .menu-section::before,
+      .menu-section::after {
+        left: 14px;
+        right: 14px;
+      }
+
+      .menu-section::before {
+        top: 14px;
+      }
+
+      .menu-section::after {
+        bottom: 14px;
+      }
+
       .section-toggle {
-        padding: 42px 14px 12px;
+        padding: 34px 12px 10px;
+        min-height: 172px;
       }
 
       .section-content {
-        padding: 6px 20px 42px;
+        padding: 0 18px 34px;
       }
 
       .section-title {
-        font-size: 44px;
-        letter-spacing: 0.08em;
+        max-width: 88%;
+        font-size: 34px;
+        letter-spacing: 0.05em;
+      }
+
+      .section-arrow {
+        margin-top: 8px;
+        font-size: 13px;
+      }
+
+      .section-content::before {
+        width: 62%;
+        margin-bottom: 22px;
       }
 
       .menu-item {
-        padding: 16px 0 18px;
+        padding: 12px 0 14px;
       }
 
       .item-name {
-        font-size: 24px;
+        font-size: 20px;
       }
 
       .item-description {
-        font-size: 13px;
-        line-height: 1.75;
+        margin-top: 8px;
+        font-size: 12px;
+        line-height: 1.65;
       }
 
       .item-price {
-        font-size: 18px;
+        margin-top: 9px;
+        font-size: 16px;
+      }
+
+      .footer-note {
+        font-size: 11px;
+      }
+
+      .site-footer-signature {
+        font-size: 10px;
       }
     }
   </style>
@@ -599,7 +672,7 @@
       tr: {
         subtitle: "Seçkin deniz ürünleri menüsü.",
         heroNote: "QR menü • Güncel fiyatlar",
-        footer: "Afiyet olsun",
+        footer: "Afiyet olsun.",
         errorPrefix: "Hata:"
       },
       en: {
@@ -685,10 +758,13 @@
 
     function scrollToSectionById(categoryId) {
       const section = document.querySelector(`.menu-section[data-category-id="${categoryId}"]`);
+      const chipsWrap = document.querySelector(".chips-wrap");
       if (!section) return;
 
       setTimeout(() => {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
+        const chipsHeight = chipsWrap ? chipsWrap.offsetHeight : 0;
+        const targetY = section.getBoundingClientRect().top + window.pageYOffset - chipsHeight - 12;
+        window.scrollTo({ top: targetY, behavior: "smooth" });
       }, 60);
     }
 
