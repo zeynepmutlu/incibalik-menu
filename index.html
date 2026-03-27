@@ -57,12 +57,25 @@
       min-height: 360px;
       margin-bottom: 12px;
       color: #fff;
-      background:
-        linear-gradient(180deg, rgba(3, 13, 24, 0.25), rgba(3, 13, 24, 0.75)),
-        url("hero-bg.jpg") center / cover no-repeat;
       box-shadow: var(--shadow);
       border: 1px solid rgba(255, 255, 255, 0.08);
       isolation: isolate;
+      background:
+        linear-gradient(145deg, rgba(7, 22, 40, 0.98), rgba(14, 45, 76, 0.96));
+    }
+
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 34%;
+      z-index: 0;
+      display: block;
+      opacity: 1;
+      transform: scale(1.02);
+      filter: saturate(0.95) blur(0.4px);
     }
 
     .hero::before {
@@ -70,14 +83,14 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(4, 13, 25, 0.18) 0%, rgba(4, 13, 25, 0.30) 34%, rgba(4, 13, 25, 0.72) 100%);
-      z-index: 0;
+        linear-gradient(180deg, rgba(4, 13, 25, 0.28) 0%, rgba(4, 13, 25, 0.38) 32%, rgba(4, 13, 25, 0.76) 100%);
+      z-index: 1;
       pointer-events: none;
     }
 
     .hero-inner {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       min-height: 360px;
       padding: 18px 18px 24px;
       display: flex;
@@ -95,8 +108,8 @@
       gap: 8px;
       padding: 6px;
       border-radius: 999px;
-      background: rgba(10, 20, 35, 0.28);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(10, 20, 35, 0.34);
+      border: 1px solid rgba(255, 255, 255, 0.16);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
     }
@@ -134,7 +147,7 @@
     .hero-seal {
       width: 68px;
       display: block;
-      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.26));
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.30));
     }
 
     .hero-logo-img {
@@ -152,16 +165,16 @@
       letter-spacing: 0.04em;
       font-weight: 700;
       text-transform: uppercase;
-      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.38);
+      text-shadow: 0 4px 16px rgba(0, 0, 0, 0.42);
     }
 
     .hero-subtitle {
       font-size: 15px;
       line-height: 1.45;
-      color: rgba(255, 255, 255, 0.90);
+      color: rgba(255, 255, 255, 0.92);
       letter-spacing: 0.10em;
       text-transform: uppercase;
-      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.36);
     }
 
     .hero-note {
@@ -523,6 +536,7 @@
   <div class="shell">
     <div class="container">
       <header class="hero">
+        <img class="hero-bg-img" src="./hero-bg.jpg" alt="İnci Balık masa görseli">
         <div class="hero-inner">
           <div class="hero-topbar">
             <div class="lang-switch">
