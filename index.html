@@ -103,6 +103,35 @@
       align-items: flex-start;
     }
 
+    .hero-top {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .hero-logo-top {
+      width: 88px;
+      height: auto;
+      display: block;
+      opacity: 0.88;
+      mix-blend-mode: screen;
+      filter: blur(0.2px) drop-shadow(0 8px 20px rgba(0, 0, 0, 0.22));
+    }
+
+    .hero-subtitle {
+      font-style: italic;
+      text-transform: none;
+    }
+
+    @media (max-width: 520px) {
+      .hero-logo-top {
+        width: 76px;
+      }
+    }
+
     .lang-switch {
       display: inline-flex;
       gap: 8px;
@@ -538,6 +567,7 @@
     <div class="container">
       <header class="hero">
         <img class="hero-bg-img" src="./hero-bg.jpg" alt="İnci Balık masa görseli">
+
         <div class="hero-inner">
           <div class="hero-topbar">
             <div class="lang-switch">
@@ -546,23 +576,18 @@
             </div>
           </div>
 
-          <div class="hero">
-
-            <!-- YENİ LOGO -->
-            <div class="hero-top">
-              <img src="./incibaliklogo.png" class="hero-logo-top">
-            </div>
-
-            <div class="hero-center">
-              <div class="hero-seal"></div>
-
-              <h1 id="site-title">İnci Balık</h1>
-              <div class="hero-subtitle" id="hero-subtitle">Denizden gelen tatlar</div>
-              <div class="hero-note" id="hero-note">Seçkin lezzetler, zarif sunumlar</div>
-            </div>
-
+          <div class="hero-top">
+            <img src="./incibaliklogo.png" class="hero-logo-top" alt="İnci Balık Logo">
           </div>
+
+          <div class="hero-center">
+            <h1 id="site-title">İnci Balık</h1>
+            <div class="hero-subtitle" id="hero-subtitle">Denizden gelen tatlar</div>
+            <div class="hero-note" id="hero-note">Seçkin lezzetler, zarif sunumlar</div>
+          </div>
+        </div>
       </header>
+
 
       <div class="chips-wrap">
         <div class="chips-bar" id="category-chips"></div>
