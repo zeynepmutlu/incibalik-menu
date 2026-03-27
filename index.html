@@ -136,7 +136,7 @@
     }
 
     .hero-seal {
-      width: 92px;
+      width: 116px;
       height: auto;
       background: none;
       border: none;
@@ -265,80 +265,40 @@
     #menu {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 22px;
     }
 
     .menu-section {
       position: relative;
       overflow: hidden;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      box-shadow: var(--shadow-soft);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.995), rgba(248, 244, 238, 0.985));
+      border-radius: 0;
+      border: 1px solid rgba(200, 165, 106, 0.78);
+      box-shadow: none;
+      background:
+        linear-gradient(180deg, rgba(5, 22, 42, 0.985), rgba(7, 27, 51, 0.99));
       scroll-margin-top: var(--sticky-offset);
       isolation: isolate;
+      padding: 18px;
     }
 
     .menu-section::before,
     .menu-section::after {
       content: "";
       position: absolute;
+      left: 18px;
+      right: 18px;
+      height: 1px;
+      background: rgba(200, 165, 106, 0.55);
       pointer-events: none;
-      background-repeat: no-repeat;
-      background-size: contain;
       z-index: 0;
     }
 
     .menu-section::before {
-      width: 132px;
-      height: 182px;
-      top: 12px;
-      right: -16px;
-      background-image: var(--fish-art);
-      opacity: 0.09;
-      transform: rotate(-7deg);
+      top: 18px;
     }
 
     .menu-section::after {
-      width: 134px;
-      height: 134px;
-      left: -26px;
-      bottom: -10px;
-      background-image: var(--shell-art);
-      opacity: 0.08;
-    }
-
-    .menu-section.theme-ara-sicaklar::before,
-    .menu-section.theme-icecekler::before {
-      background-image: var(--coral-art);
-      width: 104px;
-      height: 152px;
-      opacity: 0.09;
-    }
-
-    .menu-section.theme-ana-yemekler::after,
-    .menu-section.theme-ickiler::after {
-      background-image: var(--fish-art);
-      left: auto;
-      right: -18px;
-      bottom: -14px;
-      transform: rotate(180deg);
-    }
-
-    .menu-section.theme-salatalar::before {
-      background-image: var(--shell-art);
-      width: 116px;
-      height: 116px;
-      right: 8px;
-      top: 16px;
-    }
-
-    .menu-section.theme-tatlilar::after {
-      background-image: var(--coral-art);
-      width: 94px;
-      height: 132px;
-      left: -8px;
-      bottom: -12px;
+      bottom: 18px;
     }
 
     .section-toggle {
@@ -347,21 +307,15 @@
       width: 100%;
       border: none;
       background: transparent;
-      text-align: left;
-      color: var(--text);
-      padding: 28px 24px 18px;
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
+      text-align: center;
+      color: #fff;
+      padding: 54px 20px 16px;
+      display: block;
       cursor: pointer;
     }
 
     .section-left {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      min-width: 0;
+      display: block;
     }
 
     .section-title-wrap {
@@ -371,36 +325,38 @@
     .section-title {
       margin: 0;
       font-family: "Cormorant Garamond", serif;
-      font-size: 44px;
-      line-height: 0.92;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      color: var(--navy);
+      font-size: 56px;
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #f7f1e8;
+      text-align: center;
     }
 
     .section-arrow {
-      width: 40px;
-      height: 40px;
-      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      margin: 18px auto 0;
       display: grid;
       place-items: center;
       border-radius: 999px;
-      background: rgba(13, 39, 66, 0.06);
-      color: var(--navy);
-      font-size: 16px;
-      transition: transform .22s ease, background .22s ease;
+      background: transparent;
+      color: rgba(247, 241, 232, 0.78);
+      font-size: 14px;
+      transition: transform .22s ease, opacity .22s ease;
     }
 
     .menu-section.open .section-arrow {
       transform: rotate(180deg);
-      background: var(--gold-soft);
+      background: transparent;
     }
 
     .section-content {
       position: relative;
       z-index: 1;
       display: none;
-      padding: 0 24px 24px;
+      padding: 8px 28px 54px;
     }
 
     .menu-section.open .section-content {
@@ -410,40 +366,40 @@
     .section-content::before {
       content: "";
       display: block;
+      width: 72%;
+      max-width: 280px;
       height: 1px;
-      margin-bottom: 12px;
-      background: linear-gradient(90deg, rgba(200, 165, 106, 0.60), rgba(13, 39, 66, 0.12), rgba(13, 39, 66, 0));
+      margin: 0 auto 28px;
+      background: rgba(200, 165, 106, 0.52);
     }
 
     .items-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 0 22px;
+      gap: 0;
     }
 
     .menu-section.theme-ana-yemekler.open .items-grid,
     .menu-section.theme-ickiler.open .items-grid {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
 
     .menu-item {
       position: relative;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 14px;
-      align-items: start;
-      padding: 16px 0;
-      border-bottom: 1px solid var(--line);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: block;
+      text-align: center;
+      padding: 18px 0 20px;
+      border-bottom: none;
+      transition: none;
     }
 
     .menu-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+      transform: none;
+      box-shadow: none;
     }
 
-    .menu-item:last-child {
-      border-bottom: none;
+    .menu-item+.menu-item {
+      margin-top: 4px;
     }
 
     .item-name-wrap {
@@ -451,42 +407,74 @@
     }
 
     .item-name {
-      font-size: 16px;
-      line-height: 1.45;
-      font-weight: 700;
-      color: #102742;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #f7f1e8;
     }
 
     .item-description {
-      margin-top: 4px;
-      max-width: 95%;
-      font-size: 12px;
-      line-height: 1.55;
-      color: var(--muted);
+      margin: 10px auto 0;
+      max-width: 92%;
+      font-size: 14px;
+      line-height: 1.8;
+      color: rgba(247, 241, 232, 0.70);
+      font-style: italic;
+      font-weight: 400;
     }
 
     .item-price {
-      align-self: start;
+      display: block;
+      margin-top: 14px;
+      align-self: unset;
       white-space: nowrap;
-      font-size: 13px;
-      line-height: 1;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--gold);
-      padding: 9px 0 0 12px;
-      background: rgba(200, 165, 106, 0.12);
+      font-size: 20px;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #f0dfbf;
+      padding: 0;
+      background: transparent;
       border: none;
-      border-radius: 8px;
+      border-radius: 0;
       box-shadow: none;
     }
 
     .footer-note {
-      margin-top: 24px;
+      margin-top: 22px;
       text-align: center;
-      color: rgba(255, 255, 255, 0.64);
+      color: rgba(247, 241, 232, 0.72);
       font-size: 12px;
-      line-height: 1.5;
-      padding-bottom: 8px;
+      line-height: 1.7;
+      padding-bottom: 0;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .site-footer {
+      margin-top: 26px;
+      padding: 10px 0 24px;
+    }
+
+    .site-footer-line {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(200, 165, 106, 0.65), transparent);
+      margin-bottom: 16px;
+    }
+
+    .site-footer-inner {
+      text-align: center;
+      color: rgba(247, 241, 232, 0.74);
+    }
+
+    .site-footer-signature {
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: rgba(200, 165, 106, 0.80);
+      text-transform: uppercase;
     }
 
     @media (max-width: 680px) {
@@ -521,45 +509,38 @@
       }
 
       .hero-seal {
-        width: 120x;
+        width: 96px;
         height: auto;
       }
 
       .section-toggle {
-        padding: 24px 18px 16px;
+        padding: 42px 14px 12px;
       }
 
       .section-content {
-        padding: 0 18px 18px;
+        padding: 6px 20px 42px;
       }
 
       .section-title {
-        font-size: 36px;
-      }
-
-      .menu-section::before {
-        width: 108px;
-        height: 146px;
-        opacity: 0.08;
-      }
-
-      .menu-section::after {
-        width: 100px;
-        height: 100px;
-        opacity: 0.07;
+        font-size: 44px;
+        letter-spacing: 0.08em;
       }
 
       .menu-item {
-        gap: 10px;
-        padding: 12px 0 13px;
+        padding: 16px 0 18px;
       }
 
       .item-name {
-        font-size: 15px;
+        font-size: 24px;
+      }
+
+      .item-description {
+        font-size: 13px;
+        line-height: 1.75;
       }
 
       .item-price {
-        font-size: 12px;
+        font-size: 18px;
       }
     }
   </style>
@@ -596,7 +577,14 @@
       <div id="status">Yükleniyor...</div>
       <div id="menu"></div>
 
-      <div class="footer-note" id="footer-note">Fiyatlar ve ürünler anlık olarak güncellenebilir.</div>
+      <div class="footer-note" id="footer-note">Afiyet olsun</div>
+
+      <footer class="site-footer">
+        <div class="site-footer-line"></div>
+        <div class="site-footer-inner">
+          <div class="site-footer-signature">Designed by Zeynep Mutlu</div>
+        </div>
+      </footer>
     </div>
   </div>
 
@@ -611,13 +599,13 @@
       tr: {
         subtitle: "Seçkin deniz ürünleri menüsü.",
         heroNote: "QR menü • Güncel fiyatlar",
-        footer: "Fiyatlar ve ürünler anlık olarak güncellenebilir.",
+        footer: "Afiyet olsun",
         errorPrefix: "Hata:"
       },
       en: {
         subtitle: "Refined seafood menu.",
         heroNote: "QR menu • Updated prices",
-        footer: "Prices and items can be updated instantly.",
+        footer: "Bon appétit",
         errorPrefix: "Error:"
       }
     };
@@ -826,7 +814,7 @@
 
           const price = document.createElement("div");
           price.className = "item-price";
-          price.innerText = item.price === "AG" ? "AG" : item.price + " TL";
+          price.innerText = item.price === "AG" ? "AG" : `${item.price} TL`;
 
           row.appendChild(nameWrap);
           row.appendChild(price);
