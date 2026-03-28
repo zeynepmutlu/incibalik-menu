@@ -63,19 +63,29 @@
       background: rgba(255, 255, 255, 0.96); color: var(--navy); border-color: rgba(255, 255, 255, 0.96);
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
     }
-    .hero-top { display: flex; justify-content: center; margin-top: 8px; margin-bottom: 8px; }
-    .hero-logo-top-wrap {
-      display: inline-flex; align-items: center; justify-content: center; width: 84px; height: 84px; border-radius: 999px;
-      padding: 7px; background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.10);
-      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16);
+    .hero-top {
+      position: absolute;
+      top: 74px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      pointer-events: none;
     }
     .hero-logo-top {
-      width: 66px; height: 66px; object-fit: contain; display: block; border-radius: 50%; opacity: 0.82;
-      filter: saturate(0.96) blur(0.18px); mix-blend-mode: screen;
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      display: block;
+      border-radius: 50%;
+      opacity: 0.9;
+      filter: saturate(0.96) drop-shadow(0 10px 24px rgba(0, 0, 0, 0.22));
     }
     .hero-center {
       flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-      gap: 10px; padding: 8px 18px 16px;
+      gap: 10px; padding: 70px 18px 16px;
     }
     h1 {
       margin: 0; font-family: "Cormorant Garamond", serif; font-size: 58px; line-height: 0.95; letter-spacing: 0.04em;
@@ -134,12 +144,13 @@
     .menu-section::after { bottom: 18px; }
     .section-toggle {
       position: relative; z-index: 1; width: 100%; border: none; background: transparent; text-align: center; color: #fff;
-      padding: 24px 18px 22px; display: block; cursor: pointer; min-height: 104px;
+      padding: 34px 18px 22px; display: block; cursor: pointer; min-height: 118px;
     }
     .section-left, .section-title-wrap { display: block; }
     .section-title {
       margin: 0; font-family: "Cormorant Garamond", serif; font-size: 31px; line-height: 0.95; font-weight: 600;
       letter-spacing: 0.05em; text-transform: uppercase; color: #f7f1e8; text-align: center; word-break: break-word; text-wrap: balance;
+      padding-top: 8px;
     }
     .section-arrow {
       width: 24px; height: 24px; margin: 12px auto 0; display: grid; place-items: center;
@@ -187,10 +198,8 @@
     .contact-item { display: grid; gap: 4px; justify-items: center; text-align: center; }
     .contact-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(247, 241, 232, 0.58); }
     .contact-value, .contact-value a { color: #f7f1e8; text-decoration: none; font-size: 14px; line-height: 1.6; }
-    .instagram-link a { display: inline-flex; align-items: center; gap: 8px; }
-    .instagram-link svg { width: 18px; height: 18px; color: #f7f1e8; }
 
-    .footer-note { margin-top: 24px; text-align: center; color: rgba(247, 241, 232, 0.72); font-size: 13px; line-height: 1.6; padding-bottom: 0; }
+    .footer-note { margin-top: 18px; text-align: center; color: rgba(247, 241, 232, 0.72); font-size: 13px; line-height: 1.6; padding-bottom: 0; }
     .site-footer { margin-top: 18px; padding: 12px 0 6px; }
     .site-footer-line { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(200, 165, 106, 0.65), transparent); margin-bottom: 12px; }
     .site-footer-signature { text-align: center; font-size: 12px; letter-spacing: 0.01em; color: rgba(247, 241, 232, 0.74); text-transform: none; }
@@ -208,9 +217,8 @@
       .shell { padding: 12px 10px 30px; }
       .hero { min-height: 332px; border-radius: 28px; }
       .hero-inner { min-height: 332px; padding: 14px 14px 20px; }
-      .hero-top { margin-top: 6px; margin-bottom: 8px; }
-      .hero-logo-top-wrap { width: 76px; height: 76px; padding: 7px; }
-      .hero-logo-top { width: 62px; height: 62px; }
+      .hero-top { top: 62px; }
+      .hero-logo-top { width: 48px; height: 48px; }
       h1 { font-size: 44px; letter-spacing: 0.035em; }
       .hero-subtitle { font-size: 14px; letter-spacing: 0.01em; }
       .lang-btn { min-width: 48px; padding: 8px 13px; }
@@ -218,8 +226,8 @@
       .chips-wrap { margin-bottom: 10px; }
       .category-chip { padding: 7px 12px; font-size: 11px; }
       .menu-section::before, .menu-section::after, .contact-section::before, .contact-section::after { left: 14px; right: 14px; }
-      .section-toggle { padding: 20px 14px 18px; min-height: 92px; }
-      .section-title { font-size: 27px; letter-spacing: 0.04em; }
+      .section-toggle { padding: 28px 14px 18px; min-height: 102px; }
+      .section-title { font-size: 27px; letter-spacing: 0.04em; padding-top: 8px; }
       .section-arrow { margin-top: 10px; font-size: 14px; }
       .section-content { padding: 0 20px 28px; }
       .section-content::before { margin-bottom: 16px; }
@@ -247,9 +255,7 @@
           </div>
 
           <div class="hero-top">
-            <div class="hero-logo-top-wrap">
-              <img src="./incibaliklogo.png" class="hero-logo-top" alt="İnci Balık Logo">
-            </div>
+            <img src="./incibaliklogo.png" class="hero-logo-top" alt="İnci Balık Logo">
           </div>
 
           <div class="hero-center">
@@ -279,24 +285,19 @@
           <div class="contact-item">
             <div class="contact-label">Konum</div>
             <div class="contact-value">
-              <a href="https://www.google.com/maps/place/%C4%B0NC%C4%B0+BALIK/@40.9349114,29.1223408,17z/data=!3m1!4b1!4m6!3m5!1s0x14cac76212ef5885:0xf8cda860530bcb6e!8m2!3d40.9349114!4d29.1249157!16s%2Fg%2F11gbkw5w4b?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 İnci Balık, Maltepe / İstanbul</a>
+              <a href="https://maps.google.com" target="_blank" rel="noopener">Konum bağlantısı ekleyin</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-label">İletişim</div>
+            <div class="contact-label">Telefon</div>
             <div class="contact-value">
-              <a href="https://wa.me/905523990253" target="_blank" rel="noopener">📞 0552 399 02 53</a>
+              <a href="tel:+900000000000">Telefon numarası ekleyin</a>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-label">Instagram</div>
-            <div class="contact-value instagram-link">
-              <a href="https://www.instagram.com/incibalikmaltepe/" target="_blank" rel="noopener" aria-label="İnci Balık Instagram">
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path fill="currentColor" d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5Zm8.88 1.12a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26ZM12 6.5A5.5 5.5 0 1 1 6.5 12 5.51 5.51 0 0 1 12 6.5Zm0 1.5A4 4 0 1 0 16 12a4 4 0 0 0-4-4Z"/>
-                </svg>
-                <span>@incibalikmaltepe</span>
-              </a>
+            <div class="contact-value">
+              <a href="https://instagram.com" target="_blank" rel="noopener">@instagramhesabi</a>
             </div>
           </div>
         </div>
@@ -462,10 +463,20 @@
       updateActiveChip();
     }
 
+    function foldText(value) {
+      return (value || "")
+        .toString()
+        .toLocaleLowerCase("tr-TR")
+        .replace(/ı/g, "i")
+        .replace(/İ/g, "i")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
     function applySearchFilter() {
       const input = document.getElementById("menu-search");
       if (!input) return;
-      const query = input.value.trim().toLocaleLowerCase("tr-TR");
+      const query = foldText(input.value.trim());
 
       const sections = document.querySelectorAll(".menu-section");
       sections.forEach(section => {
@@ -473,7 +484,7 @@
         let visibleItemCount = 0;
 
         items.forEach(item => {
-          const text = item.innerText.toLocaleLowerCase("tr-TR");
+          const text = foldText(item.innerText);
           const match = !query || text.includes(query);
           item.classList.toggle("hidden-by-search", !match);
           if (match) visibleItemCount += 1;
