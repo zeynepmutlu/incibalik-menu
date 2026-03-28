@@ -106,25 +106,31 @@
 
     .lang-switch {
       display: inline-flex;
-      gap: 8px;
-      padding: 6px;
+      gap: 5px;
+      padding: 5px;
       border-radius: 0;
-      background: rgba(10, 20, 35, 0.34);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(10, 20, 35, 0.28);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .lang-btn {
-      min-width: 52px;
+      min-width: 60px;
       border-radius: 0;
-      padding: 9px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(255, 255, 255, 0.06);
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.05);
       color: #fff;
       font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.02em;
       cursor: pointer;
       transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
     }
 
     .lang-btn.active {
@@ -134,49 +140,6 @@
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
     }
 
-    .hero-top {
-      position: absolute;
-      top: 40px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 3;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      pointer-events: none;
-    }
-
-    .hero-logo-frame {
-      position: relative;
-      width: 170px;
-      height: 140px;
-      overflow: visible;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-top::before {
-      content: "";
-      position: absolute;
-      width: 112px;
-      height: 112px;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.10) 42%, rgba(255, 255, 255, 0) 74%);
-      filter: blur(15px);
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-
-    .hero-logo-top {
-      width: auto;
-      height: 118px;
-      display: block;
-      opacity: 0.96;
-      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.18));
-    }
-
     .hero-center {
       flex: 1;
       display: flex;
@@ -184,8 +147,52 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      gap: 8px;
-      padding: 108px 18px 18px;
+      padding: 22px 18px 18px;
+    }
+
+    .hero-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .hero-logo-crop {
+      position: relative;
+      width: 136px;
+      height: 72px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo-crop::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center,
+          rgba(255, 255, 255, 0.18) 0%,
+          rgba(255, 255, 255, 0.08) 38%,
+          rgba(255, 255, 255, 0) 75%);
+      filter: blur(12px);
+      transform: scale(1.15);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-logo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 46%;
+      display: block;
+      opacity: 0.98;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
     }
 
     h1 {
@@ -287,10 +294,10 @@
       flex: 0 0 auto;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 0;
-      padding: 7px 12px;
+      padding: 8px 14px;
       background: rgba(255, 255, 255, 0.98);
       color: var(--navy);
-      font-size: 11px;
+      font-size: 12px;
       font-weight: 700;
       white-space: nowrap;
       box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
@@ -627,25 +634,22 @@
         padding: 14px 14px 20px;
       }
 
-      .hero-top {
-        top: 34px;
+      .hero-center {
+        padding: 16px 14px 18px;
       }
 
-      .hero-logo-frame {
-        width: 140px;
-        height: 116px;
+      .hero-brand {
+        gap: 8px;
+        margin-top: 6px;
       }
 
-      .hero-top::before {
-        width: 90px;
-        height: 90px;
-        filter: blur(12px);
+      .hero-logo-crop {
+        width: 116px;
+        height: 62px;
       }
 
-      .hero-logo-top {
-        width: auto;
-        height: 96px;
-        transform: none;
+      .hero-logo {
+        object-position: center 46%;
       }
 
       h1 {
@@ -658,9 +662,16 @@
         letter-spacing: 0.02em;
       }
 
+      .lang-switch {
+        gap: 4px;
+        padding: 4px;
+      }
+
       .lang-btn {
-        min-width: 48px;
-        padding: 8px 13px;
+        min-width: 54px;
+        padding: 6px 8px;
+        font-size: 11px;
+        gap: 4px;
       }
 
       .search-input {
@@ -673,7 +684,7 @@
       }
 
       .category-chip {
-        padding: 7px 12px;
+        padding: 8px 13px;
         font-size: 11px;
       }
 
@@ -747,20 +758,19 @@
         <div class="hero-inner">
           <div class="hero-topbar">
             <div class="lang-switch">
-              <button id="tr-btn" class="lang-btn active" type="button">TR</button>
-              <button id="en-btn" class="lang-btn" type="button">EN</button>
-            </div>
-          </div>
-
-          <div class="hero-top">
-            <div class="hero-logo-frame">
-              <img src="./incibaliklogo.png" class="hero-logo-top" alt="İnci Balık Logo">
+              <button id="tr-btn" class="lang-btn active" type="button">🇹🇷 TR</button>
+              <button id="en-btn" class="lang-btn" type="button">🇬🇧 EN</button>
             </div>
           </div>
 
           <div class="hero-center">
-            <h1 id="site-title">İnci Balık</h1>
-            <div class="hero-subtitle" id="hero-subtitle">Denizden gelen tatlar</div>
+            <div class="hero-brand">
+              <div class="hero-logo-crop">
+                <img src="./incibaliklogo.png" class="hero-logo" alt="İnci Balık Logo">
+              </div>
+              <h1 id="site-title">İnci Balık</h1>
+              <div class="hero-subtitle" id="hero-subtitle">Denizden gelen tatlar</div>
+            </div>
           </div>
         </div>
       </header>
