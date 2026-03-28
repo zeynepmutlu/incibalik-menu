@@ -7,9 +7,7 @@
   <title>İnci Balık Menü</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #041427;
@@ -21,13 +19,8 @@
       --sticky-offset: 132px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
@@ -40,20 +33,13 @@
         linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 42%, var(--bg-3) 100%);
     }
 
-    .shell {
-      width: 100%;
-      padding: 16px 12px 36px;
-    }
-
-    .container {
-      max-width: 620px;
-      margin: 0 auto;
-    }
+    .shell { width: 100%; padding: 16px 12px 36px; }
+    .container { max-width: 620px; margin: 0 auto; }
 
     .hero {
       position: relative;
       overflow: hidden;
-      border-radius: 30px;
+      border-radius: 0;
       min-height: 360px;
       margin-bottom: 12px;
       color: #fff;
@@ -72,8 +58,8 @@
       object-position: center 34%;
       display: block;
       z-index: 0;
-      transform: scale(1.02);
-      filter: saturate(0.96) blur(0.6px);
+      transform: scale(1.015);
+      filter: saturate(0.98) blur(0.16px);
       opacity: 1;
     }
 
@@ -81,10 +67,12 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg,
-          rgba(4, 13, 25, 0.20) 0%,
-          rgba(4, 13, 25, 0.30) 30%,
-          rgba(4, 13, 25, 0.62) 100%);
+      background: linear-gradient(
+        180deg,
+        rgba(4, 13, 25, 0.08) 0%,
+        rgba(4, 13, 25, 0.16) 32%,
+        rgba(4, 13, 25, 0.42) 100%
+      );
       z-index: 1;
       pointer-events: none;
     }
@@ -108,7 +96,7 @@
       display: inline-flex;
       gap: 8px;
       padding: 6px;
-      border-radius: 999px;
+      border-radius: 0;
       background: rgba(10, 20, 35, 0.34);
       border: 1px solid rgba(255, 255, 255, 0.16);
       backdrop-filter: blur(12px);
@@ -117,7 +105,7 @@
 
     .lang-btn {
       min-width: 52px;
-      border-radius: 999px;
+      border-radius: 0;
       padding: 9px 14px;
       border: 1px solid rgba(255, 255, 255, 0.16);
       background: rgba(255, 255, 255, 0.06);
@@ -136,36 +124,46 @@
 
     .hero-top {
       position: absolute;
-      top: 56px;
+      top: 34px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 3;
+      width: 100%;
       display: flex;
       justify-content: center;
-      width: 100%;
       pointer-events: none;
+    }
+
+    .hero-logo-frame {
+      position: relative;
+      width: 164px;
+      height: 96px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-top::before {
       content: "";
       position: absolute;
-      width: 92px;
-      height: 92px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.08) 42%, rgba(255, 255, 255, 0.00) 72%);
-      filter: blur(10px);
+      width: 112px;
+      height: 112px;
+      background: radial-gradient(circle, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.10) 42%, rgba(255,255,255,0) 74%);
+      filter: blur(15px);
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
 
     .hero-logo-top {
-      width: 108px;
+      width: 280px;
       height: auto;
       object-fit: contain;
       display: block;
-      opacity: 0.96;
-      filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.20));
+      opacity: 0.98;
+      transform: translateY(-12px);
+      filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
     }
 
     .hero-center {
@@ -176,7 +174,7 @@
       align-items: center;
       text-align: center;
       gap: 8px;
-      padding: 74px 18px 16px;
+      padding: 108px 18px 18px;
     }
 
     h1 {
@@ -191,10 +189,10 @@
     }
 
     .hero-subtitle {
-      font-size: 13px;
+      font-size: 12px;
       line-height: 1.35;
       color: rgba(255, 255, 255, 0.88);
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       text-transform: none;
       font-style: italic;
       text-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
@@ -211,14 +209,12 @@
       background: linear-gradient(180deg, rgba(4, 20, 39, 0.94) 0%, rgba(4, 20, 39, 0.82) 68%, rgba(4, 20, 39, 0) 100%);
     }
 
-    .search-bar {
-      position: relative;
-    }
+    .search-bar { position: relative; }
 
     .search-input {
       width: 100%;
       height: 50px;
-      border-radius: 999px;
+      border-radius: 0;
       border: 1px solid rgba(255, 255, 255, 0.12);
       background: rgba(8, 18, 32, 0.34);
       color: #fff;
@@ -230,9 +226,7 @@
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
     }
 
-    .search-input::placeholder {
-      color: rgba(255, 255, 255, 0.62);
-    }
+    .search-input::placeholder { color: rgba(255, 255, 255, 0.62); }
 
     .search-icon {
       position: absolute;
@@ -265,19 +259,13 @@
       -ms-overflow-style: none;
     }
 
-    .chips-bar::-webkit-scrollbar {
-      display: none;
-    }
-
-    .chips-bar::after {
-      content: "";
-      flex: 0 0 8px;
-    }
+    .chips-bar::-webkit-scrollbar { display: none; }
+    .chips-bar::after { content: ""; flex: 0 0 8px; }
 
     .category-chip {
       flex: 0 0 auto;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 999px;
+      border-radius: 0;
       padding: 7px 12px;
       background: rgba(255, 255, 255, 0.98);
       color: var(--navy);
@@ -318,9 +306,7 @@
       isolation: isolate;
     }
 
-    .menu-section.hidden-by-search {
-      display: none;
-    }
+    .menu-section.hidden-by-search { display: none; }
 
     .menu-section::before,
     .menu-section::after {
@@ -334,13 +320,8 @@
       z-index: 0;
     }
 
-    .menu-section::before {
-      top: 18px;
-    }
-
-    .menu-section::after {
-      bottom: 18px;
-    }
+    .menu-section::before { top: 18px; }
+    .menu-section::after { bottom: 18px; }
 
     .section-toggle {
       position: relative;
@@ -356,10 +337,7 @@
       min-height: 118px;
     }
 
-    .section-left,
-    .section-title-wrap {
-      display: block;
-    }
+    .section-left, .section-title-wrap { display: block; }
 
     .section-title {
       margin: 0;
@@ -373,7 +351,7 @@
       text-align: center;
       word-break: break-word;
       text-wrap: balance;
-      padding-top: 8px;
+      padding-top: 16px;
     }
 
     .section-arrow {
@@ -387,9 +365,7 @@
       transition: transform .22s ease, opacity .22s ease;
     }
 
-    .menu-section.open .section-arrow {
-      transform: rotate(180deg);
-    }
+    .menu-section.open .section-arrow { transform: rotate(180deg); }
 
     .section-content {
       position: relative;
@@ -398,9 +374,7 @@
       padding: 0 28px 34px;
     }
 
-    .menu-section.open .section-content {
-      display: block;
-    }
+    .menu-section.open .section-content { display: block; }
 
     .section-content::before {
       content: "";
@@ -425,13 +399,8 @@
       border-bottom: none;
     }
 
-    .menu-item.hidden-by-search {
-      display: none;
-    }
-
-    .menu-item+.menu-item {
-      margin-top: 2px;
-    }
+    .menu-item.hidden-by-search { display: none; }
+    .menu-item + .menu-item { margin-top: 2px; }
 
     .item-name {
       font-family: "Cormorant Garamond", serif;
@@ -494,13 +463,8 @@
       background: rgba(200, 165, 106, 0.46);
     }
 
-    .contact-section::before {
-      top: 18px;
-    }
-
-    .contact-section::after {
-      bottom: 18px;
-    }
+    .contact-section::before { top: 18px; }
+    .contact-section::after { bottom: 18px; }
 
     .contact-title {
       margin: 0 0 16px;
@@ -532,8 +496,7 @@
       color: rgba(247, 241, 232, 0.58);
     }
 
-    .contact-value,
-    .contact-value a {
+    .contact-value, .contact-value a {
       color: #f7f1e8;
       text-decoration: none;
       font-size: 14px;
@@ -576,7 +539,7 @@
       width: 48px;
       height: 48px;
       border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 999px;
+      border-radius: 0;
       background: rgba(8, 18, 32, 0.44);
       color: #fff;
       backdrop-filter: blur(12px);
@@ -600,17 +563,13 @@
     }
 
     @media (max-width: 520px) {
-      :root {
-        --sticky-offset: 126px;
-      }
+      :root { --sticky-offset: 126px; }
 
-      .shell {
-        padding: 12px 10px 30px;
-      }
+      .shell { padding: 12px 10px 30px; }
 
       .hero {
         min-height: 332px;
-        border-radius: 28px;
+        border-radius: 0;
       }
 
       .hero-inner {
@@ -619,18 +578,24 @@
       }
 
       .hero-top {
-        top: 48px;
+        top: 28px;
+      }
+
+      .hero-logo-frame {
+        width: 128px;
+        height: 76px;
       }
 
       .hero-top::before {
-        width: 74px;
-        height: 74px;
-        filter: blur(9px);
+        width: 90px;
+        height: 90px;
+        filter: blur(12px);
       }
 
       .hero-logo-top {
-        width: 84px;
+        width: 220px;
         height: auto;
+        transform: translateY(-10px);
       }
 
       h1 {
@@ -653,9 +618,7 @@
         font-size: 13px;
       }
 
-      .chips-wrap {
-        margin-bottom: 10px;
-      }
+      .chips-wrap { margin-bottom: 10px; }
 
       .category-chip {
         padding: 7px 12px;
@@ -678,7 +641,7 @@
       .section-title {
         font-size: 27px;
         letter-spacing: 0.04em;
-        padding-top: 8px;
+        padding-top: 14px;
       }
 
       .section-arrow {
@@ -690,30 +653,16 @@
         padding: 0 20px 28px;
       }
 
-      .section-content::before {
-        margin-bottom: 16px;
-      }
+      .section-content::before { margin-bottom: 16px; }
 
-      .item-name {
-        font-size: 22px;
-      }
+      .item-name { font-size: 22px; }
+      .item-description { font-size: 12px; }
+      .item-price { font-size: 15px; }
 
-      .item-description {
-        font-size: 12px;
-      }
-
-      .item-price {
-        font-size: 15px;
-      }
-
-      .contact-title {
-        font-size: 25px;
-      }
+      .contact-title { font-size: 25px; }
 
       .contact-value,
-      .contact-value a {
-        font-size: 13px;
-      }
+      .contact-value a { font-size: 13px; }
 
       .ag-note {
         font-size: 10px;
@@ -738,7 +687,9 @@
           </div>
 
           <div class="hero-top">
-            <img src="./incibaliklogo.png" class="hero-logo-top" alt="İnci Balık Logo">
+            <div class="hero-logo-frame">
+              <img src="./incibaliklogo.png" class="hero-logo-top" alt="İnci Balık Logo">
+            </div>
           </div>
 
           <div class="hero-center">
@@ -751,8 +702,7 @@
       <div class="search-wrap">
         <div class="search-bar">
           <span class="search-icon">⌕</span>
-          <input id="menu-search" class="search-input" type="search" placeholder="Menüde ara..."
-            aria-label="Menüde ara">
+          <input id="menu-search" class="search-input" type="search" placeholder="Menüde ara..." aria-label="Menüde ara">
         </div>
       </div>
 
@@ -769,8 +719,7 @@
           <div class="contact-item">
             <div class="contact-label">Konum</div>
             <div class="contact-value">
-              <a href="https://www.google.com/maps/place/%C4%B0NC%C4%B0+BALIK/@40.9349114,29.1223408,17z/data=!3m1!4b1!4m6!3m5!1s0x14cac76212ef5885:0xf8cda860530bcb6e!8m2!3d40.9349114!4d29.1249157!16s%2Fg%2F11gbkw5w4b?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
-                target="_blank" rel="noopener">📍 İnci Balık, Maltepe / İstanbul</a>
+              <a href="https://www.google.com/maps/place/%C4%B0NC%C4%B0+BALIK/@40.9349114,29.1223408,17z/data=!3m1!4b1!4m6!3m5!1s0x14cac76212ef5885:0xf8cda860530bcb6e!8m2!3d40.9349114!4d29.1249157!16s%2Fg%2F11gbkw5w4b?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 İnci Balık, Maltepe / İstanbul</a>
             </div>
           </div>
           <div class="contact-item">
@@ -782,8 +731,7 @@
           <div class="contact-item">
             <div class="contact-label">Instagram</div>
             <div class="contact-value">
-              <a href="https://www.instagram.com/incibalikmaltepe/" target="_blank" rel="noopener">📷
-                @incibalikmaltepe</a>
+              <a href="https://www.instagram.com/incibalikmaltepe/" target="_blank" rel="noopener">📷 @incibalikmaltepe</a>
             </div>
           </div>
         </div>
@@ -1162,5 +1110,4 @@
     });
   </script>
 </body>
-
 </html>
