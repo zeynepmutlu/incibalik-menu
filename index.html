@@ -102,42 +102,44 @@
       display: flex;
       justify-content: flex-end;
       align-items: flex-start;
+      margin-bottom: 6px;
     }
 
     .lang-switch {
       display: inline-flex;
-      gap: 5px;
-      padding: 5px;
+      gap: 10px;
+      padding: 0;
       border-radius: 0;
-      background: rgba(10, 20, 35, 0.28);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: none;
+      border: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
     .lang-btn {
-      min-width: 60px;
+      min-width: auto;
       border-radius: 0;
-      padding: 7px 10px;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
-      font-weight: 700;
+      padding: 4px 0 6px;
+      border: none;
+      border-bottom: 1px solid transparent;
+      background: none;
+      color: rgba(255, 255, 255, 0.68);
+      font-weight: 600;
       font-size: 12px;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.12em;
       cursor: pointer;
       transition: 0.2s ease;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
+      gap: 0;
     }
 
     .lang-btn.active {
-      background: rgba(255, 255, 255, 0.96);
-      color: var(--navy);
-      border-color: rgba(255, 255, 255, 0.96);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+      background: none;
+      color: #fff;
+      border-bottom-color: rgba(255, 255, 255, 0.92);
+      box-shadow: none;
     }
 
     .hero-center {
@@ -147,7 +149,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 22px 18px 18px;
+      padding: 18px 18px 18px;
     }
 
     .hero-brand {
@@ -156,29 +158,29 @@
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin-top: 8px;
+      margin-top: 2px;
     }
 
     .hero-logo-crop {
       position: relative;
-      width: 136px;
-      height: 72px;
-      overflow: hidden;
+      width: 176px;
+      height: 92px;
+      overflow: visible;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-bottom: 2px;
     }
 
     .hero-logo-crop::before {
       content: "";
       position: absolute;
-      inset: 0;
+      inset: -12px -18px;
       background: radial-gradient(circle at center,
-          rgba(255, 255, 255, 0.18) 0%,
-          rgba(255, 255, 255, 0.08) 38%,
-          rgba(255, 255, 255, 0) 75%);
-      filter: blur(12px);
-      transform: scale(1.15);
+          rgba(255, 255, 255, 0.12) 0%,
+          rgba(255, 255, 255, 0.04) 42%,
+          rgba(255, 255, 255, 0) 76%);
+      filter: blur(10px);
       pointer-events: none;
       z-index: 0;
     }
@@ -186,13 +188,11 @@
     .hero-logo {
       position: relative;
       z-index: 1;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 46%;
+      width: 176px;
+      height: auto;
       display: block;
-      opacity: 0.98;
-      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
+      object-fit: contain;
+      filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.24));
     }
 
     h1 {
@@ -635,21 +635,22 @@
       }
 
       .hero-center {
-        padding: 16px 14px 18px;
+        padding: 14px 14px 18px;
       }
 
       .hero-brand {
         gap: 8px;
-        margin-top: 6px;
+        margin-top: 0;
       }
 
       .hero-logo-crop {
-        width: 116px;
-        height: 62px;
+        width: 148px;
+        height: 78px;
       }
 
       .hero-logo {
-        object-position: center 46%;
+        width: 148px;
+        height: auto;
       }
 
       h1 {
@@ -663,15 +664,15 @@
       }
 
       .lang-switch {
-        gap: 4px;
-        padding: 4px;
+        gap: 10px;
+        padding: 0;
       }
 
       .lang-btn {
-        min-width: 54px;
-        padding: 6px 8px;
+        min-width: auto;
+        padding: 4px 0 6px;
         font-size: 11px;
-        gap: 4px;
+        gap: 0;
       }
 
       .search-input {
@@ -758,15 +759,15 @@
         <div class="hero-inner">
           <div class="hero-topbar">
             <div class="lang-switch">
-              <button id="tr-btn" class="lang-btn active" type="button">🇹🇷 TR</button>
-              <button id="en-btn" class="lang-btn" type="button">🇬🇧 EN</button>
+              <button id="tr-btn" class="lang-btn active" type="button">TR</button>
+              <button id="en-btn" class="lang-btn" type="button">EN</button>
             </div>
           </div>
 
           <div class="hero-center">
             <div class="hero-brand">
               <div class="hero-logo-crop">
-                <img src="./incibaliklogo.png" class="hero-logo" alt="İnci Balık Logo">
+                <img src="./incibaliklogo-cropped.png" class="hero-logo" alt="İnci Balık Logo">
               </div>
               <h1 id="site-title">İnci Balık</h1>
               <div class="hero-subtitle" id="hero-subtitle">Denizden gelen tatlar</div>
