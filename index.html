@@ -40,7 +40,7 @@
     }
     .hero-bg-img {
       position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 34%;
-      display: block; z-index: 0; transform: scale(1.03); filter: saturate(0.92) blur(1.4px); opacity: 0.96;
+      display: block; z-index: 0; transform: scale(1.03); filter: saturate(0.90) blur(3px); opacity: 0.88;
     }
     .hero::before {
       content: ""; position: absolute; inset: 0;
@@ -65,7 +65,7 @@
     }
     .hero-top {
       position: absolute;
-      top: 74px;
+      top: 66px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 3;
@@ -74,9 +74,21 @@
       width: 100%;
       pointer-events: none;
     }
+    .hero-top::before {
+      content: "";
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 42%, rgba(255,255,255,0.00) 72%);
+      filter: blur(10px);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
     .hero-logo-top {
-      width: 56px;
-      height: 56px;
+      width: 44px;
+      height: 44px;
       object-fit: contain;
       display: block;
       border-radius: 50%;
@@ -85,14 +97,14 @@
     }
     .hero-center {
       flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center;
-      gap: 10px; padding: 70px 18px 16px;
+      gap: 8px; padding: 74px 18px 16px;
     }
     h1 {
-      margin: 0; font-family: "Cormorant Garamond", serif; font-size: 58px; line-height: 0.95; letter-spacing: 0.04em;
+      margin: 0; font-family: "Cormorant Garamond", serif; font-size: 60px; line-height: 0.95; letter-spacing: 0.04em;
       font-weight: 700; text-transform: uppercase; text-shadow: 0 4px 16px rgba(0, 0, 0, 0.38);
     }
     .hero-subtitle {
-      font-size: 17px; line-height: 1.45; color: rgba(255, 255, 255, 0.94); letter-spacing: 0.01em;
+      font-size: 13px; line-height: 1.35; color: rgba(255, 255, 255, 0.88); letter-spacing: 0.02em;
       text-transform: none; font-style: italic; text-shadow: 0 3px 12px rgba(0, 0, 0, 0.32);
     }
 
@@ -181,6 +193,15 @@
       color: #f0dfbf; padding: 0; background: transparent; border: none; box-shadow: none;
     }
 
+.ag-note {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.6;
+      color: rgba(247, 241, 232, 0.62);
+      font-style: italic;
+    }
+
     .contact-section {
       margin-top: 22px; border: 1px solid rgba(200, 165, 106, 0.52); background: linear-gradient(180deg, rgba(6, 23, 42, 0.98), rgba(7, 27, 51, 0.98));
       padding: 24px 20px 22px; position: relative; overflow: hidden;
@@ -217,10 +238,11 @@
       .shell { padding: 12px 10px 30px; }
       .hero { min-height: 332px; border-radius: 28px; }
       .hero-inner { min-height: 332px; padding: 14px 14px 20px; }
-      .hero-top { top: 62px; }
-      .hero-logo-top { width: 48px; height: 48px; }
-      h1 { font-size: 44px; letter-spacing: 0.035em; }
-      .hero-subtitle { font-size: 14px; letter-spacing: 0.01em; }
+      .hero-top { top: 54px; }
+      .hero-top::before { width: 74px; height: 74px; filter: blur(9px); }
+      .hero-logo-top { width: 38px; height: 38px; }
+      h1 { font-size: 46px; letter-spacing: 0.04em; }
+      .hero-subtitle { font-size: 12px; letter-spacing: 0.02em; }
       .lang-btn { min-width: 48px; padding: 8px 13px; }
       .search-input { height: 46px; font-size: 13px; }
       .chips-wrap { margin-bottom: 10px; }
@@ -236,6 +258,7 @@
       .item-price { font-size: 15px; }
       .contact-title { font-size: 25px; }
       .contact-value, .contact-value a { font-size: 13px; }
+      .ag-note { font-size: 10px; margin-top: 14px; }
     }
   </style>
 </head>
@@ -285,19 +308,19 @@
           <div class="contact-item">
             <div class="contact-label">Konum</div>
             <div class="contact-value">
-              <a href="https://maps.google.com" target="_blank" rel="noopener">Konum bağlantısı ekleyin</a>
+              <a href="https://www.google.com/maps/place/%C4%B0NC%C4%B0+BALIK/@40.9349114,29.1223408,17z/data=!3m1!4b1!4m6!3m5!1s0x14cac76212ef5885:0xf8cda860530bcb6e!8m2!3d40.9349114!4d29.1249157!16s%2Fg%2F11gbkw5w4b?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">📍 İnci Balık, Maltepe / İstanbul</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-label">Telefon</div>
+            <div class="contact-label">İletişim</div>
             <div class="contact-value">
-              <a href="tel:+900000000000">Telefon numarası ekleyin</a>
+              <a href="https://wa.me/905523990253" target="_blank" rel="noopener">📞 0552 399 02 53</a>
             </div>
           </div>
           <div class="contact-item">
             <div class="contact-label">Instagram</div>
             <div class="contact-value">
-              <a href="https://instagram.com" target="_blank" rel="noopener">@instagramhesabi</a>
+              <a href="https://www.instagram.com/incibalikmaltepe/" target="_blank" rel="noopener">📷 @incibalikmaltepe</a>
             </div>
           </div>
         </div>
@@ -591,6 +614,16 @@
         });
 
         content.appendChild(grid);
+
+        if (category.id === "ana-yemekler") {
+          const agNote = document.createElement("div");
+          agNote.className = "ag-note";
+          agNote.innerText = currentLang === "tr"
+            ? "* AG: Günlük alış fiyatına göre değişmektedir."
+            : "* AG: Price varies according to daily purchase cost.";
+          content.appendChild(agNote);
+        }
+
         section.appendChild(toggle);
         section.appendChild(content);
         menuDiv.appendChild(section);
