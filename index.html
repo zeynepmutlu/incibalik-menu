@@ -340,17 +340,36 @@
 
     .category-chip {
       flex: 0 0 auto;
-      border: 1px solid rgba(200, 165, 106, 0.78);
-      border-radius: 0;
-      padding: 8px 14px;
-      background: rgba(255, 255, 255, 0.98);
-      color: var(--navy);
+
+      padding: 8px 16px;
+
+      border: 1px solid rgba(200, 165, 106, 0.5);
+      border-radius: 20px;
+
+      background: transparent;
+      color: #c8a56a;
+
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+
       white-space: nowrap;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
       cursor: pointer;
-      transition: 0.2s ease;
+
+      transition: all 0.25s ease;
+    }
+
+    /* hover */
+    .category-chip:hover {
+      background: rgba(200, 165, 106, 0.08);
+    }
+
+    /* aktif kategori */
+    .category-chip.active {
+      background: #c8a56a;
+      color: #0d2742;
+
+      border-color: #c8a56a;
     }
 
     .category-chip.active {
