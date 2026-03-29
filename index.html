@@ -340,36 +340,17 @@
 
     .category-chip {
       flex: 0 0 auto;
-
-      padding: 8px 16px;
-
-      border: 1px solid rgba(200, 165, 106, 0.5);
-      border-radius: 20px;
-
-      background: transparent;
-      color: #c8a56a;
-
+      border: 1px solid rgba(200, 165, 106, 0.78);
+      border-radius: 0;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.98);
+      color: var(--navy);
       font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-
+      font-weight: 700;
       white-space: nowrap;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
       cursor: pointer;
-
-      transition: all 0.25s ease;
-    }
-
-    /* hover */
-    .category-chip:hover {
-      background: rgba(200, 165, 106, 0.08);
-    }
-
-    /* aktif kategori */
-    .category-chip.active {
-      background: #c8a56a;
-      color: #0d2742;
-
-      border-color: #c8a56a;
+      transition: 0.2s ease;
     }
 
     .category-chip.active {
@@ -542,7 +523,8 @@
     /* açıklama */
     .item-description {
       margin: 8px auto 0;
-      max-width: 96%;
+      width: 100%;
+      max-width: none;
 
       font-size: 13px;
       line-height: 1.65;
@@ -551,7 +533,12 @@
       font-style: italic;
       font-weight: 400;
       text-align: center;
-      text-wrap: balance;
+    }
+
+    .item-name-wrap {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
     }
 
     /* fiyat artık daha premium */
@@ -745,6 +732,10 @@
     @media (max-width: 520px) {
       :root {
         --sticky-offset: 126px;
+      }
+
+      .item-name-wrap {
+        max-width: 300px;
       }
 
       .shell {
