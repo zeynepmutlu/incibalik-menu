@@ -484,10 +484,64 @@
     }
 
     .menu-item {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      padding: 15px 0;
-      border-bottom: none;
+
+      padding: 22px 0;
+      position: relative;
+    }
+
+    /* ürünler arası ince gold çizgi */
+    .menu-item::after {
+      content: "";
+      display: block;
+      width: 60%;
+      height: 1px;
+      margin-top: 18px;
+
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(200, 165, 106, 0.5),
+          transparent);
+    }
+
+    /* son üründe çizgi olmasın */
+    .menu-item:last-child::after {
+      display: none;
+    }
+
+    .item-name {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 24px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #f7f1e8;
+    }
+
+    /* açıklama */
+    .item-description {
+      margin-top: 6px;
+      max-width: 80%;
+
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(247, 241, 232, 0.65);
+
+      font-style: italic;
+    }
+
+    /* fiyat artık daha premium */
+    .item-price {
+      margin-top: 10px;
+
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+
+      color: #c8a56a;
+      /* GOLD */
     }
 
     .menu-item.hidden-by-search {
@@ -498,38 +552,11 @@
       margin-top: 2px;
     }
 
-    .item-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 25px;
-      line-height: 1.12;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      color: #f7f1e8;
-    }
 
-    .item-description {
-      margin: 8px auto 0;
-      max-width: 92%;
-      font-size: 13px;
-      line-height: 1.65;
-      color: rgba(247, 241, 232, 0.72);
-      font-style: italic;
-      font-weight: 400;
-    }
 
-    .item-price {
-      display: block;
-      margin-top: 8px;
-      font-size: 16px;
-      line-height: 1.2;
-      font-weight: 700;
-      letter-spacing: 0.02em;
-      color: #f0dfbf;
-      padding: 0;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-    }
+
+
+
 
     .ag-note {
       margin-top: 18px;
