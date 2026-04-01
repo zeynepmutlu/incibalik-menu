@@ -668,21 +668,25 @@
 
       font-size: 15px;
       font-weight: 600;
-      /* kalın yaptık */
 
-      padding: 14px 6px;
+      padding: 14px 6px 12px;
 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      /* beyaz çizgi */
       transition: 0.2s ease;
     }
+
+    .contact-link span {
+      display: inline-block;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
 
     .contact-link:last-child {
       border-bottom: none;
     }
 
     .contact-link:hover {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.28);
       color: #fff;
     }
 
@@ -786,6 +790,23 @@
     @media (max-width: 520px) {
       :root {
         --sticky-offset: 126px;
+      }
+
+      @media (max-width: 520px) {
+        .contact-link {
+          font-size: 14px;
+          padding: 13px 4px 11px;
+        }
+
+        .contact-link-icon {
+          width: 17px;
+          height: 17px;
+        }
+
+        .contact-link-icon-map {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       .item-name-wrap {
@@ -1005,17 +1026,17 @@
 
           <a class="contact-link" href="https://www.google.com/maps?q=40.9349114,29.1249157" target="_blank"
             rel="noopener">
-            <img src="./icon-map.png" class="contact-link-icon">
+            <img src="./icon-map.png" class="contact-link-icon contact-link-icon-map" alt="Konum">
             <span>İnci Balık, Maltepe / İstanbul</span>
           </a>
 
           <a class="contact-link" href="https://wa.me/905523990253" target="_blank" rel="noopener">
-            <img src="./icon-whatsapp.png" class="contact-link-icon">
+            <img src="./icon-whatsapp.png" class="contact-link-icon" alt="WhatsApp">
             <span>0552 399 02 53</span>
           </a>
 
           <a class="contact-link" href="https://www.instagram.com/incibalikmaltepe/" target="_blank" rel="noopener">
-            <img src="./icon-instagram.png" class="contact-link-icon">
+            <img src="./icon-instagram.png" class="contact-link-icon" alt="Instagram">
             <span>@incibalikmaltepe</span>
           </a>
 
