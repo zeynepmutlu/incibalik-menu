@@ -573,12 +573,6 @@
       margin-top: 2px;
     }
 
-
-
-
-
-
-
     .ag-note {
       margin-top: 18px;
       text-align: center;
@@ -588,18 +582,29 @@
       font-style: italic;
     }
 
+    .contact-grid {
+      display: grid;
+      gap: 16px;
+      padding: 0 6px;
+    }
+
+    .contact-link:focus-visible {
+      outline: none;
+      box-shadow: none;
+    }
+
     .contact-section {
-      margin-top: 24px;
-      border: 1px solid rgba(200, 165, 106, 0.36);
+      margin-top: 28px;
+      border: 1px solid rgba(200, 165, 106, 0.34);
       background:
-        linear-gradient(180deg, rgba(11, 27, 48, 0.98), rgba(8, 20, 36, 0.98)),
+        linear-gradient(180deg, rgba(7, 24, 45, 0.98), rgba(5, 18, 34, 0.98)),
         linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
-      padding: 28px 20px 24px;
+      padding: 34px 22px 30px;
       position: relative;
       overflow: hidden;
       box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.04),
-        0 16px 34px rgba(0, 0, 0, 0.14);
+        inset 0 1px 0 rgba(255, 255, 255, 0.03),
+        0 18px 40px rgba(0, 0, 0, 0.16);
     }
 
     .contact-section::before,
@@ -609,7 +614,11 @@
       left: 18px;
       right: 18px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(200, 165, 106, 0.55), transparent);
+      background: linear-gradient(90deg,
+          transparent,
+          rgba(200, 165, 106, 0.42),
+          transparent);
+      pointer-events: none;
     }
 
     .contact-section::before {
@@ -624,108 +633,94 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 18px;
+      gap: 10px;
+      margin-bottom: 26px;
     }
 
     .contact-logo {
-      width: 66px;
+      width: 72px;
       height: auto;
       display: block;
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.18));
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.22));
     }
 
     .contact-title {
       margin: 0;
-      padding-top: 0;
       font-family: "Cormorant Garamond", serif;
-      font-size: 30px;
+      font-size: 32px;
+      line-height: 1;
       text-align: center;
       color: #fbf6ee;
-      letter-spacing: 0.03em;
-    }
-
-    .contact-grid {
-      display: grid;
-      gap: 16px;
-      padding: 0 6px;
+      letter-spacing: 0.04em;
     }
 
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      margin-top: 8px;
+      align-items: center;
+      gap: 14px;
+      margin-top: 0;
     }
 
     .contact-link {
-      width: 100%;
-      max-width: 360px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 24px 1fr;
+      min-height: 42px;
+      display: inline-flex;
       align-items: center;
-      column-gap: 14px;
+      justify-content: center;
+      gap: 14px;
 
       text-decoration: none;
-      color: rgba(255, 248, 238, 0.95);
+      color: rgba(255, 248, 238, 0.96);
       font-size: 15px;
-      font-weight: 600;
+      font-weight: 500;
       line-height: 1.45;
+      text-align: center;
 
-      padding: 12px 0;
+      padding: 6px 0;
       background: transparent;
       border: none;
       border-radius: 0;
-      box-shadow: none;
       outline: none;
+      box-shadow: none;
 
-      transition: color 0.18s ease, opacity 0.18s ease;
+      transition: opacity 0.18s ease, color 0.18s ease;
       -webkit-tap-highlight-color: transparent;
     }
 
-
     .contact-link span {
-      display: block;
+      display: inline-block;
+      border: none;
       padding: 0;
       margin: 0;
-      border: none;
-      text-align: left;
-    }
-
-
-    .contact-link:last-child {
-      border-bottom: none;
     }
 
     .contact-link:hover {
       background: transparent;
       color: #ffffff;
-      opacity: 0.9;
+      opacity: 0.88;
     }
 
     .contact-link:focus,
+    .contact-link:focus-visible,
     .contact-link:active,
     .contact-link:visited {
       background: transparent;
-      color: rgba(255, 248, 238, 0.95);
+      color: rgba(255, 248, 238, 0.96);
       outline: none;
       box-shadow: none;
     }
-
-    .contact-link:focus-visible {
-      outline: none;
-      box-shadow: none;
-    }
-
 
     .contact-link-icon {
-      width: 18px;
-      height: 18px;
+      width: 20px;
+      height: 20px;
       object-fit: contain;
       display: block;
       flex-shrink: 0;
-      justify-self: center;
+    }
+
+    .contact-link-icon-map {
+      width: 17px;
+      height: 17px;
     }
 
     .contact-item {
@@ -822,23 +817,6 @@
     @media (max-width: 520px) {
       :root {
         --sticky-offset: 126px;
-      }
-
-      @media (max-width: 520px) {
-        .contact-link {
-          font-size: 14px;
-          padding: 13px 4px 11px;
-        }
-
-        .contact-link-icon {
-          width: 17px;
-          height: 17px;
-        }
-
-        .contact-link-icon-map {
-          width: 16px;
-          height: 16px;
-        }
       }
 
       .item-name-wrap {
@@ -974,12 +952,37 @@
         font-size: 15px;
       }
 
+      .contact-section {
+        padding: 30px 18px 26px;
+      }
+
       .contact-logo {
-        width: 58px;
+        width: 62px;
       }
 
       .contact-title {
-        font-size: 26px;
+        font-size: 28px;
+      }
+
+      .contact-links {
+        gap: 12px;
+      }
+
+      .contact-link {
+        gap: 12px;
+        font-size: 14px;
+        line-height: 1.4;
+        max-width: 100%;
+      }
+
+      .contact-link-icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .contact-link-icon-map {
+        width: 15px;
+        height: 15px;
       }
 
       .contact-label {
@@ -1056,7 +1059,7 @@
 
         <div class="contact-links">
 
-          <a class="contact-link" href="https://www.google.com/maps?q=40.9349114,29.1249157" target="_blank"
+          <a class="contact-link" href="https://maps.app.goo.gl/iUePMZPspzZ9RuRc9?g_st=ic" target="_blank"
             rel="noopener">
             <img src="./icon-map.png" class="contact-link-icon contact-link-icon-map" alt="Konum">
             <span>İnci Balık, Maltepe / İstanbul</span>
@@ -1074,6 +1077,9 @@
 
         </div>
       </div>
+
+
+
 
       <div class="footer-note" id="footer-note">Afiyetle.</div>
 
