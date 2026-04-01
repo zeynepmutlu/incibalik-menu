@@ -594,7 +594,7 @@
       background:
         linear-gradient(180deg, rgba(11, 27, 48, 0.98), rgba(8, 20, 36, 0.98)),
         linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
-      padding: 26px 20px 24px;
+      padding: 28px 20px 24px;
       position: relative;
       overflow: hidden;
       box-shadow:
@@ -625,7 +625,7 @@
       flex-direction: column;
       align-items: center;
       gap: 8px;
-      margin-bottom: 14px;
+      margin-bottom: 18px;
     }
 
     .contact-logo {
@@ -654,30 +654,43 @@
     .contact-links {
       display: flex;
       flex-direction: column;
-      margin-top: 10px;
+      gap: 6px;
+      margin-top: 8px;
     }
 
     .contact-link {
-      display: flex;
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 24px 1fr;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
+      column-gap: 14px;
 
       text-decoration: none;
       color: rgba(255, 248, 238, 0.95);
-
       font-size: 15px;
       font-weight: 600;
+      line-height: 1.45;
 
-      padding: 14px 6px 12px;
+      padding: 12px 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      outline: none;
 
-      transition: 0.2s ease;
+      transition: color 0.18s ease, opacity 0.18s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
+
     .contact-link span {
-      display: inline-block;
-      padding-bottom: 10px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+      display: block;
+      padding: 0;
+      margin: 0;
+      border: none;
+      text-align: left;
     }
 
 
@@ -686,15 +699,33 @@
     }
 
     .contact-link:hover {
-      background: rgba(255, 255, 255, 0.28);
-      color: #fff;
+      background: transparent;
+      color: #ffffff;
+      opacity: 0.9;
     }
+
+    .contact-link:focus,
+    .contact-link:active,
+    .contact-link:visited {
+      background: transparent;
+      color: rgba(255, 248, 238, 0.95);
+      outline: none;
+      box-shadow: none;
+    }
+
+    .contact-link:focus-visible {
+      outline: none;
+      box-shadow: none;
+    }
+
 
     .contact-link-icon {
       width: 18px;
       height: 18px;
       object-fit: contain;
+      display: block;
       flex-shrink: 0;
+      justify-self: center;
     }
 
     .contact-item {
@@ -703,6 +734,7 @@
       justify-items: center;
       text-align: center;
     }
+
 
     .contact-label {
       font-family: "Cormorant Garamond", serif;
@@ -804,8 +836,8 @@
         }
 
         .contact-link-icon-map {
-          width: 20px;
-          height: 20px;
+          width: 16px;
+          height: 16px;
         }
       }
 
