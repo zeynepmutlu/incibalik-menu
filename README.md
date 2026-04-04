@@ -1,6 +1,6 @@
 # 🍽️ İnci Balık – Luxury QR Menu
 
-A modern and elegant QR-based restaurant menu system.
+A modern, mobile-first QR menu experience designed for fine dining restaurants.
 
 ## ✨ Features
 
@@ -8,25 +8,32 @@ A modern and elegant QR-based restaurant menu system.
 - 🌍 Multi-language support (TR / EN)
 - 📱 Mobile-first responsive design
 - ⚡ Instant updates without redeploy
-- 🎨 Premium UI inspired by fine dining menus
+- 🎨 Premium UI inspired by fine dining aesthetics
 
-## 🛠️ Technologies
+## 🛠️ Tech Stack
 
 - HTML / CSS / JavaScript
-- Google Sheets API
-- Netlify (deployment)
+- Google Sheets (as CMS)
+- GitHub Pages (deployment)
 
 ## 🔗 Live Demo
 
-👉 https://incibalikmenu.netlify.app
+👉 https://zeynepmutlu.github.io/qr-menu/
+
+> Custom domain (incibalikmenu.com) will be connected soon.
 
 ## 💡 About
 
 This project was built as a real-world solution for restaurants to:
-- Easily update menu items
-- Change prices instantly
-- Provide a modern QR experience for customers
+
+- Easily update menu items via Google Sheets  
+- Change prices instantly without technical knowledge  
+- Provide a seamless and elegant QR menu experience  
+
+## 🚀 Use Case
+
+Built for real restaurant deployment with QR code integration.
 
 ---
 
-Designed & developed by Zeynep Mutlu
+Designed & developed by **Zeynep Mutlu**
