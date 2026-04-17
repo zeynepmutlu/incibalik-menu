@@ -148,7 +148,6 @@
       background: rgba(255, 255, 255, 0.08);
       border-color: rgba(200, 165, 106, 0.30);
       transform: translateY(-1px);
-      /* ekledik */
     }
 
     .lang-btn.active {
@@ -340,10 +339,8 @@
       display: flex;
       gap: 8px;
       overflow-x: scroll;
-      /* auto değil */
       overflow-y: hidden;
       padding: 2px 6px 12px 2px;
-
       scrollbar-width: thin;
       scrollbar-color: rgba(200, 165, 106, 0.9) rgba(255, 255, 255, 0.06);
     }
@@ -365,7 +362,6 @@
           rgba(255, 244, 220, 0.95),
           rgba(200, 165, 106, 0.95));
       border-radius: 999px;
-
       box-shadow:
         0 0 8px rgba(200, 165, 106, 0.4),
         inset 0 0 4px rgba(255, 255, 255, 0.4);
@@ -382,7 +378,6 @@
       display: block;
       height: 10px;
       margin-top: -6px;
-
       background: linear-gradient(180deg,
           rgba(200, 165, 106, 0.25),
           rgba(200, 165, 106, 0));
@@ -551,26 +546,22 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-
       padding: 22px 0;
       position: relative;
     }
 
-    /* ürünler arası ince gold çizgi */
     .menu-item::after {
       content: "";
       display: block;
       width: 60%;
       height: 1px;
       margin-top: 18px;
-
       background: linear-gradient(90deg,
           transparent,
           rgba(200, 165, 106, 0.5),
           transparent);
     }
 
-    /* son üründe çizgi olmasın */
     .menu-item:last-child::after {
       display: none;
     }
@@ -583,16 +574,13 @@
       color: #f7f1e8;
     }
 
-    /* açıklama */
     .item-description {
       margin: 8px auto 0;
       width: 100%;
       max-width: none;
-
       font-size: 13px;
       line-height: 1.65;
       color: rgba(247, 241, 232, 0.68);
-
       font-style: italic;
       font-weight: 400;
       text-align: center;
@@ -604,16 +592,72 @@
       margin: 0 auto;
     }
 
-    /* fiyat artık daha premium */
     .item-price {
       margin-top: 10px;
-
       font-size: 15px;
       font-weight: 600;
       letter-spacing: 0.05em;
-
       color: #c8a56a;
-      /* GOLD */
+    }
+
+    .alcohol-group {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto 18px;
+      padding: 22px 20px 18px;
+      border: 1px solid rgba(200, 165, 106, 0.28);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+    }
+
+    .alcohol-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .alcohol-group-title {
+      margin: 0 0 16px;
+      text-align: center;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      color: #f7f1e8;
+    }
+
+    .alcohol-group-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .alcohol-group-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(200, 165, 106, 0.18);
+    }
+
+    .alcohol-group-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .alcohol-size {
+      font-size: 14px;
+      line-height: 1.4;
+      color: rgba(247, 241, 232, 0.86);
+      text-align: left;
+    }
+
+    .alcohol-price {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: #c8a56a;
+      white-space: nowrap;
+      text-align: right;
     }
 
     .menu-item.hidden-by-search {
@@ -719,21 +763,18 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-
       text-decoration: none;
       color: rgba(255, 248, 238, 0.96);
       font-size: 15px;
       font-weight: 500;
       line-height: 1.45;
       text-align: center;
-
       padding: 6px 0;
       background: transparent;
       border: none;
       border-radius: 0;
       outline: none;
       box-shadow: none;
-
       transition: opacity 0.18s ease, color 0.18s ease;
       -webkit-tap-highlight-color: transparent;
     }
@@ -1006,6 +1047,30 @@
         font-size: 15px;
       }
 
+      .alcohol-group {
+        max-width: 100%;
+        padding: 18px 16px 14px;
+        margin-bottom: 14px;
+      }
+
+      .alcohol-group-title {
+        font-size: 24px;
+        margin-bottom: 12px;
+      }
+
+      .alcohol-group-row {
+        gap: 12px;
+        padding: 7px 0;
+      }
+
+      .alcohol-size {
+        font-size: 13px;
+      }
+
+      .alcohol-price {
+        font-size: 14px;
+      }
+
       .contact-section {
         padding: 30px 18px 26px;
       }
@@ -1126,9 +1191,6 @@
 
         </div>
       </div>
-
-
-
 
       <div class="footer-note" id="footer-note">Afiyetle.</div>
 
@@ -1314,6 +1376,21 @@
         .replace(/[\u0300-\u036f]/g, "");
     }
 
+    function splitAlcoholProductName(productName) {
+      const match = (productName || "").match(/^(.*?)(\d+\s*cl)$/i);
+      if (!match) {
+        return {
+          brand: productName || "",
+          size: ""
+        };
+      }
+
+      return {
+        brand: match[1].trim(),
+        size: match[2].trim()
+      };
+    }
+
     function applySearchFilter() {
       const input = document.getElementById("menu-search");
       if (!input) return;
@@ -1321,7 +1398,7 @@
 
       const sections = document.querySelectorAll(".menu-section");
       sections.forEach(section => {
-        const items = section.querySelectorAll(".menu-item");
+        const items = section.querySelectorAll(".menu-item, .alcohol-group");
         let visibleItemCount = 0;
 
         items.forEach(item => {
@@ -1403,33 +1480,84 @@
         const grid = document.createElement("div");
         grid.className = "items-grid";
 
-        grouped[category.id].forEach(item => {
-          const row = document.createElement("div");
-          row.className = "menu-item";
+        if (category.id === "alkoller") {
+          const alcoholGroups = {};
 
-          const nameWrap = document.createElement("div");
-          nameWrap.className = "item-name-wrap";
+          grouped[category.id].forEach(item => {
+            const parsed = splitAlcoholProductName(item.product || "");
+            const brandKey = parsed.brand || item.product || "";
 
-          const name = document.createElement("div");
-          name.className = "item-name";
-          name.innerText = item.product || "";
-          nameWrap.appendChild(name);
+            if (!alcoholGroups[brandKey]) {
+              alcoholGroups[brandKey] = [];
+            }
 
-          if (item.description) {
-            const desc = document.createElement("div");
-            desc.className = "item-description";
-            desc.innerText = item.description;
-            nameWrap.appendChild(desc);
-          }
+            alcoholGroups[brandKey].push({
+              size: parsed.size || item.product || "",
+              price: item.price
+            });
+          });
 
-          const price = document.createElement("div");
-          price.className = "item-price";
-          price.innerText = item.price === "AG" ? "AG" : `${item.price} TL`;
+          Object.keys(alcoholGroups).forEach(brand => {
+            const groupCard = document.createElement("div");
+            groupCard.className = "alcohol-group";
 
-          row.appendChild(nameWrap);
-          row.appendChild(price);
-          grid.appendChild(row);
-        });
+            const groupTitle = document.createElement("div");
+            groupTitle.className = "alcohol-group-title";
+            groupTitle.innerText = brand;
+
+            const groupList = document.createElement("div");
+            groupList.className = "alcohol-group-list";
+
+            alcoholGroups[brand].forEach(entry => {
+              const row = document.createElement("div");
+              row.className = "alcohol-group-row";
+
+              const size = document.createElement("div");
+              size.className = "alcohol-size";
+              size.innerText = entry.size;
+
+              const price = document.createElement("div");
+              price.className = "alcohol-price";
+              price.innerText = entry.price === "AG" ? "AG" : `${entry.price} TL`;
+
+              row.appendChild(size);
+              row.appendChild(price);
+              groupList.appendChild(row);
+            });
+
+            groupCard.appendChild(groupTitle);
+            groupCard.appendChild(groupList);
+            grid.appendChild(groupCard);
+          });
+        } else {
+          grouped[category.id].forEach(item => {
+            const row = document.createElement("div");
+            row.className = "menu-item";
+
+            const nameWrap = document.createElement("div");
+            nameWrap.className = "item-name-wrap";
+
+            const name = document.createElement("div");
+            name.className = "item-name";
+            name.innerText = item.product || "";
+            nameWrap.appendChild(name);
+
+            if (item.description) {
+              const desc = document.createElement("div");
+              desc.className = "item-description";
+              desc.innerText = item.description;
+              nameWrap.appendChild(desc);
+            }
+
+            const price = document.createElement("div");
+            price.className = "item-price";
+            price.innerText = item.price === "AG" ? "AG" : `${item.price} TL`;
+
+            row.appendChild(nameWrap);
+            row.appendChild(price);
+            grid.appendChild(row);
+          });
+        }
 
         content.appendChild(grid);
 
