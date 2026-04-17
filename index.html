@@ -603,7 +603,7 @@
     .alcohol-group {
       width: 100%;
       max-width: 430px;
-      margin: 0 auto 24px;
+      margin: 0 auto 34px;
       padding: 0;
       border: none;
       background: transparent;
@@ -630,7 +630,7 @@
       width: 42%;
       max-width: 220px;
       height: 1px;
-      margin: 14px auto 16px;
+      margin: 14px auto 18px;
       background: linear-gradient(90deg,
           transparent,
           rgba(200, 165, 106, 0.42),
@@ -641,13 +641,16 @@
       display: flex;
       flex-direction: column;
       gap: 0;
+      max-width: 320px;
+      margin: 0 auto;
     }
 
     .alcohol-group-row {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 88px 120px;
+      justify-content: center;
       align-items: center;
-      gap: 16px;
+      gap: 26px;
       padding: 12px 0;
       border-bottom: 1px solid rgba(200, 165, 106, 0.18);
     }
@@ -658,16 +661,18 @@
     }
 
     .alcohol-size {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.4;
-      color: rgba(247, 241, 232, 0.82);
+      color: rgba(247, 241, 232, 0.92);
       text-align: left;
+      font-weight: 500;
+      letter-spacing: 0.01em;
     }
 
     .alcohol-price {
-      font-size: 15px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       color: #c8a56a;
       white-space: nowrap;
       text-align: right;
@@ -1063,7 +1068,7 @@
 
       .alcohol-group {
         max-width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 28px;
       }
 
       .alcohol-group-title {
@@ -1072,20 +1077,25 @@
 
       .alcohol-group-title::after {
         width: 52%;
-        margin: 12px auto 14px;
+        margin: 12px auto 16px;
+      }
+
+      .alcohol-group-list {
+        max-width: 290px;
       }
 
       .alcohol-group-row {
-        gap: 12px;
+        grid-template-columns: 80px 108px;
+        gap: 20px;
         padding: 10px 0;
       }
 
       .alcohol-size {
-        font-size: 13px;
+        font-size: 14px;
       }
 
       .alcohol-price {
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .contact-section {
