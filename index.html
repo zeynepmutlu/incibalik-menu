@@ -687,11 +687,12 @@
       margin-top: 2px;
     }
 
-    .daily-price-note {
-      font-size: 10px !important;
-      font-weight: 400 !important;
-      letter-spacing: 0.02em !important;
-      color: rgba(247, 241, 232, 0.62) !important;
+    .ag-note {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.6;
+      color: rgba(247, 241, 232, 0.62);
       font-style: italic;
     }
 
@@ -1544,12 +1545,7 @@
 
               const price = document.createElement("div");
               price.className = "alcohol-price";
-              if (item.price === "AG") {
-                price.innerText = "Günlük fiyatları değişmektedir.";
-                price.classList.add("daily-price-note");
-              } else {
-                price.innerText = `${item.price} TL`;
-              }
+              price.innerText = entry.price === "AG" ? "AG" : `${entry.price} TL`;
 
               row.appendChild(size);
               row.appendChild(price);
@@ -1582,13 +1578,7 @@
 
             const price = document.createElement("div");
             price.className = "item-price";
-
-            if (item.price === "AG") {
-              price.innerText = "Günlük fiyatları değişmektedir.";
-              price.classList.add("daily-price-note");
-            } else {
-              price.innerText = `${item.price} TL`;
-            }
+            price.innerText = item.price === "AG" ? "AG" : `${item.price} TL`;
 
             row.appendChild(nameWrap);
             row.appendChild(price);
@@ -1598,7 +1588,14 @@
 
         content.appendChild(grid);
 
-
+        if (category.id === "ana-yemekler") {
+          const agNote = document.createElement("div");
+          agNote.className = "ag-note";
+          agNote.innerText = currentLang === "tr"
+            ? "* AG: Günlük alış fiyatına göre değişmektedir."
+            : "* AG: Price varies according to daily purchase cost.";
+          content.appendChild(agNote);
+        }
 
         section.appendChild(toggle);
         section.appendChild(content);
