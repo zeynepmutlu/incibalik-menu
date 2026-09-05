@@ -1582,11 +1582,12 @@
 
             const price = document.createElement("div");
             price.className = "item-price";
-            if (entry.price === "AG") {
+
+            if (item.price === "AG") {
               price.innerText = "Günlük fiyatları değişmektedir.";
               price.classList.add("daily-price-note");
             } else {
-              price.innerText = `${entry.price} TL`;
+              price.innerText = `${item.price} TL`;
             }
 
             row.appendChild(nameWrap);
