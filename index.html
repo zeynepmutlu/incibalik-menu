@@ -1545,7 +1545,7 @@
 
               const price = document.createElement("div");
               price.className = "alcohol-price";
-              price.innerText = entry.price === "AG" ? "AG" : `${entry.price} TL`;
+              price.innerText = entry.price === "AG" ? "AG" : `${entry.price} ₺`;
 
               row.appendChild(size);
               row.appendChild(price);
@@ -1578,7 +1578,7 @@
 
             const price = document.createElement("div");
             price.className = "item-price";
-            price.innerText = item.price === "AG" ? "AG" : `${item.price} TL`;
+            price.innerText = item.price === "AG" ? "AG" : `${item.price} ₺`;
 
             row.appendChild(nameWrap);
             row.appendChild(price);
