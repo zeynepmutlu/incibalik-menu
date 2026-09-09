@@ -1581,7 +1581,7 @@
 
             const price = document.createElement("div");
             price.className = "item-price";
-            price.innerText = item.price === "AG"
+            price.innerText = (item.price === "AG" || item.price.trim() === "")
               ? ""
               : `${item.price} \u20BA`;
 
