@@ -678,12 +678,6 @@
       text-align: right;
     }
 
-    .daily-price-note {
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0;
-      font-style: italic;
-    }
 
     .menu-item.hidden-by-search,
     .alcohol-group.hidden-by-search {
@@ -1553,12 +1547,8 @@
               const price = document.createElement("div");
               price.className = "alcohol-price";
               price.innerText = entry.price === "AG"
-                ? "Günlük fiyatları değişmektedir."
+                ? ""
                 : `${entry.price} \u20BA`;
-
-              if (entry.price === "AG") {
-                price.classList.add("daily-price-note");
-              }
 
               row.appendChild(size);
               row.appendChild(price);
@@ -1592,12 +1582,8 @@
             const price = document.createElement("div");
             price.className = "item-price";
             price.innerText = item.price === "AG"
-              ? "Günlük fiyatları değişmektedir."
+              ? ""
               : `${item.price} \u20BA`;
-
-            if (item.price === "AG") {
-              price.classList.add("daily-price-note");
-            }
 
             row.appendChild(nameWrap);
             row.appendChild(price);
@@ -1611,8 +1597,8 @@
           const agNote = document.createElement("div");
           agNote.className = "ag-note";
           agNote.innerText = currentLang === "tr"
-            ? "* AG: Günlük alış fiyatına göre değişmektedir."
-            : "* AG: Price varies according to daily purchase cost.";
+            ? "* Günlük alış fiyatına göre değişmektedir."
+            : "* Price varies according to daily purchase cost.";
           content.appendChild(agNote);
         }
 
