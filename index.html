@@ -600,6 +600,15 @@
       color: #c8a56a;
     }
 
+    .item-calorie {
+      margin-top: 5px;
+      font-family: "Manrope", sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      color: rgba(247, 241, 232, 0.52);
+    }
+
     .alcohol-group {
       width: 100%;
       max-width: 430px;
@@ -1587,6 +1596,14 @@
 
             row.appendChild(nameWrap);
             row.appendChild(price);
+
+            if (item.product === "Girit") {
+              const calorie = document.createElement("div");
+              calorie.className = "item-calorie";
+              calorie.innerText = "≈ 210 kcal";
+              row.appendChild(calorie);
+            }
+
             grid.appendChild(row);
           });
         }
