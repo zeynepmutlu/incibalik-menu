@@ -1475,6 +1475,7 @@
           product: currentLang === "tr" ? item.product_tr : item.product_en,
           description: currentLang === "tr" ? item.description_tr : item.description_en,
           price: item.price,
+          calories: item.calories,
           sort_order: item.sort_order
         });
       });
@@ -1597,12 +1598,6 @@
             row.appendChild(nameWrap);
             row.appendChild(price);
 
-            if (item.product === "Girit") {
-              const calorie = document.createElement("div");
-              calorie.className = "item-calorie";
-              calorie.innerText = "≈ 210 kcal";
-              row.appendChild(calorie);
-            }
 
             grid.appendChild(row);
           });
@@ -1651,8 +1646,9 @@
             description_tr: cols[5] || "",
             description_en: cols[6] || "",
             price: cols[7] || "",
-            status: cols[8] || "",
-            sort_order: Number(cols[9]) || 0
+            calories: cols[8] || "",
+            status: cols[9] || "",
+            sort_order: Number(cols[10]) || 0
           };
           if (item.status === "active") allItems.push(item);
         });
