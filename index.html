@@ -280,6 +280,27 @@
       text-shadow: 0 3px 10px rgba(0, 0, 0, 0.24);
     }
 
+    .hero-update-date {
+      position: absolute;
+      right: 18px;
+      bottom: 14px;
+      z-index: 4;
+
+      font-family: "Manrope", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+
+      color: rgba(255, 255, 255, 0.88);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.75);
+
+      background: rgba(4, 20, 39, 0.35);
+      padding: 5px 8px;
+
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
     .search-wrap {
       position: sticky;
       top: 4px;
@@ -941,6 +962,13 @@
         --sticky-offset: 126px;
       }
 
+      .hero-update-date {
+        right: 12px;
+        bottom: 10px;
+        font-size: 9px;
+        padding: 4px 6px;
+      }
+
       .item-name-wrap {
         max-width: 300px;
       }
@@ -1183,6 +1211,9 @@
               </div>
               <div class="hero-subtitle" id="hero-subtitle">Denizden gelen tatlar</div>
             </div>
+          </div>
+          <div class="hero-update-date">
+            Son Güncellenme Tarihi: 1 Temmuz 2026
           </div>
         </div>
       </header>
