@@ -622,12 +622,14 @@
     }
 
     .item-calorie {
-      margin-top: 5px;
-      font-family: "Manrope", sans-serif;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.03em;
-      color: rgba(247, 241, 232, 0.52);
+      margin-top: 7px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 14px;
+      line-height: 1;
+      font-weight: 500;
+      font-style: italic;
+      letter-spacing: 0.02em;
+      color: rgba(220, 192, 143, 0.82);
     }
 
     .alcohol-group {
@@ -1661,8 +1663,8 @@
               const calorieValue = item.calories.trim();
 
               calorie.innerText = calorieValue.toLowerCase().includes("kcal")
-                ? `≈ ${calorieValue}`
-                : `≈ ${calorieValue} kcal`;
+                ? calorieValue
+                : `${calorieValue} kcal`;
 
               row.appendChild(calorie);
             }
