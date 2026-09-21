@@ -1654,6 +1654,18 @@
             row.appendChild(nameWrap);
             row.appendChild(price);
 
+            if (item.calories && item.calories.trim() !== "") {
+              const calorie = document.createElement("div");
+              calorie.className = "item-calorie";
+
+              const calorieValue = item.calories.trim();
+
+              calorie.innerText = calorieValue.toLowerCase().includes("kcal")
+                ? `≈ ${calorieValue}`
+                : `≈ ${calorieValue} kcal`;
+
+              row.appendChild(calorie);
+            }
 
             grid.appendChild(row);
           });
