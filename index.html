@@ -623,17 +623,27 @@
 
     .item-calorie {
       display: block;
-      margin-top: 7px;
+      margin-top: 8px;
 
-      font-family: "Manrope", sans-serif;
-      font-size: 10px;
-      line-height: 1.2;
-      font-weight: 500;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 13px;
+      line-height: 1;
+      font-weight: 400;
       font-style: normal;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-transform: none;
 
-      color: rgba(210, 218, 225, 0.68);
+      color: rgba(190, 196, 198, 0.72);
+    }
+
+    .item-calorie::before {
+      content: "•";
+      display: inline-block;
+      margin-right: 6px;
+
+      font-size: 8px;
+      vertical-align: 1px;
+      color: rgba(200, 165, 106, 0.65);
     }
 
     .alcohol-group {
