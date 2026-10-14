@@ -1661,6 +1661,20 @@
             row.appendChild(nameWrap);
             row.appendChild(price);
 
+            if (
+              category.id === "ana-yemekler" &&
+              (item.price.trim() === "" || item.price.trim().toUpperCase() === "AG")
+            ) {
+              const dailyPriceNote = document.createElement("div");
+              dailyPriceNote.className = "ag-note";
+
+              dailyPriceNote.innerText = currentLang === "tr"
+                ? "* Günlük alış fiyatına göre değişmektedir."
+                : "* Price varies according to daily purchase cost.";
+
+              row.appendChild(dailyPriceNote);
+            }
+
             if (item.calories && item.calories.trim() !== "") {
               const calorie = document.createElement("div");
               calorie.className = "item-calorie";
@@ -1680,17 +1694,6 @@
 
         content.appendChild(grid);
 
-        if (
-          category.id === "ana-yemekler" &&
-          grouped[category.id].some(item => item.price.trim().toUpperCase() === "AG")
-        ) {
-          const agNote = document.createElement("div");
-          agNote.className = "ag-note";
-          agNote.innerText = currentLang === "tr"
-            ? "* Günlük alış fiyatına göre değişmektedir."
-            : "* Price varies according to daily purchase cost.";
-          content.appendChild(agNote);
-        }
 
         section.appendChild(toggle);
         section.appendChild(content);
