@@ -1680,7 +1680,10 @@
 
         content.appendChild(grid);
 
-        if (category.id === "ana-yemekler") {
+        if (
+          category.id === "ana-yemekler" &&
+          grouped[category.id].some(item => item.price.trim().toUpperCase() === "AG")
+        ) {
           const agNote = document.createElement("div");
           agNote.className = "ag-note";
           agNote.innerText = currentLang === "tr"
