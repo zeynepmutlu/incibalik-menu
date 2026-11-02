@@ -2,6 +2,38 @@
 <html lang="tr">
 
 <head>
+  <!-- Google Analytics - Consent Based -->
+  <script>
+    const GA_MEASUREMENT_ID = 'G-PJRQY3CE1H';
+
+    function loadAnalytics() {
+      if (window.analyticsLoaded) return;
+
+      window.analyticsLoaded = true;
+      window.dataLayer = window.dataLayer || [];
+
+      window.gtag = function () {
+        dataLayer.push(arguments);
+      };
+
+      gtag('js', new Date());
+      gtag('config', GA_MEASUREMENT_ID);
+
+      const script = document.createElement('script');
+      script.async = true;
+      script.src =
+        'https://www.googletagmanager.com/gtag/js?id=' +
+        GA_MEASUREMENT_ID;
+
+      document.head.appendChild(script);
+    }
+
+    if (
+      localStorage.getItem('inciBalikAnalyticsConsent') === 'accepted'
+    ) {
+      loadAnalytics();
+    }
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>İnci Balık Menü</title>
@@ -16,7 +48,7 @@
       --bg-2: #08203b;
       --bg-3: #0d2b4d;
       --navy: #102d4b;
-      --gold: #c8a56a;
+      --gold: #F5C76E;
       --gold-soft: #dcc08f;
       --shadow: 0 24px 60px rgba(0, 8, 18, 0.34);
       --sticky-offset: 132px;
@@ -1294,6 +1326,39 @@
 
       <footer class="site-footer">
         <div class="site-footer-line"></div>
+
+        <button id="footer-cookie-settings" type="button" style="
+      display: block;
+      margin: 18px auto 8px;
+      padding: 6px 10px;
+      background: transparent;
+      border: none;
+      color: #E8D5A3;
+      font-family: inherit;
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+    ">
+          Çerez Tercihleri
+        </button>
+
+        <button id="footer-privacy-info" type="button" style="
+      display: block;
+      margin: 0 auto 20px;
+      padding: 6px 10px;
+      background: transparent;
+      border: none;
+      color: #E8D5A3;
+      font-family: inherit;
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+    ">
+          Gizlilik Bilgilendirmesi
+        </button>
+
         <div class="site-footer-signature">
           <span class="designed-by">DESIGNED BY</span>
           <span class="designer-name">Zeynep Mutlu</span>
@@ -1770,6 +1835,356 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   </script>
+  <!-- COOKIE CONSENT START -->
+  <style>
+    #cookie-banner {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 32px);
+      max-width: 560px;
+      background: #041427;
+      border: 1px solid #E8D5A3;
+      border-radius: 14px;
+      padding: 20px;
+      box-sizing: border-box;
+      z-index: 99999;
+      box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.45),
+        0 0 18px rgba(232, 213, 163, 0.18);
+      color: #ffffff;
+      font-family: inherit;
+    }
+
+    #cookie-banner h3 {
+      color: #E8D5A3;
+      font-size: 17px;
+      margin: 0 0 10px;
+      text-shadow: 0 0 12px rgba(232, 213, 163, 0.25);
+    }
+
+    #cookie-banner p {
+      font-size: 13px;
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .cookie-buttons button {
+      flex: 1;
+      padding: 11px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    #cookie-reject {
+      background: transparent;
+      color: #E8D5A3;
+      border: 1px solid #E8D5A3;
+    }
+
+    #cookie-reject:hover {
+      background: rgba(232, 213, 163, 0.08);
+    }
+
+    #cookie-accept {
+      background: linear-gradient(135deg,
+          #F5E7C5,
+          #E8D5A3,
+          #D6BA7D);
+      color: #041427;
+      border: 1px solid #E8D5A3;
+      box-shadow: 0 0 14px rgba(232, 213, 163, 0.18);
+    }
+
+    #cookie-accept:hover {
+      box-shadow: 0 0 20px rgba(232, 213, 163, 0.35);
+    }
+
+    /* PRIVACY INFORMATION MODAL */
+
+    #cookie-privacy-link {
+      background: none;
+      border: 0;
+      color: #E8D5A3;
+      text-decoration: underline;
+      cursor: pointer;
+      padding: 0;
+      font: inherit;
+    }
+
+    #privacy-dialog {
+      position: fixed;
+      inset: 0;
+      z-index: 100000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.65);
+      box-sizing: border-box;
+    }
+
+    #privacy-content {
+      width: 100%;
+      max-width: 560px;
+      max-height: 85vh;
+      overflow: auto;
+      box-sizing: border-box;
+      background: #041427;
+      border: 1px solid #E8D5A3;
+      border-radius: 14px;
+      padding: 22px;
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(232, 213, 163, 0.18);
+    }
+
+    #privacy-content h3 {
+      color: #E8D5A3;
+      margin: 0 0 12px;
+    }
+
+    #privacy-content a {
+      color: #E8D5A3;
+    }
+
+    #privacy-close {
+      display: block;
+      margin: 18px 0 0 auto;
+      padding: 10px 22px;
+      background: linear-gradient(135deg,
+          #F5E7C5,
+          #E8D5A3,
+          #D6BA7D);
+      color: #041427;
+      border: 0;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+  </style>
+
+  <div id="cookie-banner" style="display: none;" role="dialog" aria-label="Çerez tercihleri">
+    <h3>Çerez Tercihleri</h3>
+
+    <p>
+      Menümüzün kullanımını analiz etmek ve deneyiminizi geliştirmek
+      için isteğe bağlı analiz çerezleri kullanıyoruz.
+      <br><br>
+      <button id="cookie-privacy-link" type="button">
+        Gizlilik Bilgilendirmesi
+      </button>
+    </p>
+
+    <div class="cookie-buttons">
+      <button id="cookie-reject" type="button">Reddet</button>
+      <button id="cookie-accept" type="button">Kabul Et</button>
+    </div>
+  </div>
+  <!-- PRIVACY INFORMATION START -->
+  <div id="privacy-dialog" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div id="privacy-content">
+
+      <h3 id="privacy-title">
+        Gizlilik ve Çerez Bilgilendirmesi
+      </h3>
+
+      <p>
+        <strong>Veri sorumlusu:</strong> İnci Balık.
+      </p>
+
+      <p>
+        <strong>İletişim:</strong>
+        Kişisel verilerinizle ilgili taleplerinizi menümüzde
+        belirtilen WhatsApp numarasına yazılı olarak iletebilirsiniz.
+      </p>
+
+      <p>
+        <strong>Veri işleme amacı:</strong>
+        QR menümüzün ziyaret edilme sıklığını, kullanım saatlerini
+        ve genel kullanım eğilimlerini analiz etmek.
+      </p>
+
+      <p>
+        <strong>İşlenen veriler:</strong>
+        Onay vermeniz hâlinde Google Analytics 4 aracılığıyla
+        ziyaret edilen sayfalar, ziyaret zamanı, yaklaşık konum,
+        tarayıcı ve cihaz bilgileri ile çevrim içi tanımlayıcılar
+        işlenebilir.
+      </p>
+
+      <p>
+        <strong>Hukuki sebep:</strong>
+        İsteğe bağlı analiz çerezleri için açık rızanız.
+        Kabul Et seçeneğini kullanmadığınız sürece
+        Google Analytics ölçümünü başlatmıyoruz.
+      </p>
+
+      <p>
+        <strong>Verilerin toplanması ve aktarılması:</strong>
+        Veriler, onayınızın ardından web sitemizde çalışan
+        Google Analytics teknolojisi aracılığıyla elektronik
+        ortamda toplanır. Google tarafından işlenebilir ve
+        yurt dışına aktarılabilir.
+      </p>
+
+      <p>
+        <strong>Veri saklama:</strong>
+        Google Analytics'te olay düzeyindeki veriler için
+        2 aylık saklama ayarı kullanılmaktadır.
+        Bu süre, bütün raporların ve verilerin aynı tarihte
+        silineceği anlamına gelmez.
+      </p>
+
+      <p>
+        <strong>Tercihleriniz:</strong>
+        Analiz çerezleri zorunlu değildir.
+        Reddet seçeneğini kullanarak menüyü kullanmaya
+        devam edebilirsiniz. İzninizi menünün altındaki
+        Çerez Tercihleri bağlantısından geri çekebilirsiniz.
+      </p>
+
+      <p>
+        <strong>Haklarınız:</strong>
+        KVKK'nın 11. maddesi kapsamında kişisel verilerinizin
+        işlenip işlenmediğini öğrenme, bilgi talep etme,
+        şartları oluştuğunda düzeltme veya silme isteme
+        gibi haklarınız bulunmaktadır.
+        Taleplerinizi menümüzdeki WhatsApp iletişim
+        kanalından iletebilirsiniz.
+      </p>
+
+      <p>
+        Google'ın veri işleme uygulamaları hakkında
+        <a href="https://policies.google.com/privacy?hl=tr" target="_blank" rel="noopener noreferrer">
+          Google Gizlilik Politikası
+        </a>
+        üzerinden bilgi alabilirsiniz.
+      </p>
+
+      <button id="privacy-close" type="button">
+        Kapat
+      </button>
+
+    </div>
+  </div>
+  <!-- PRIVACY INFORMATION END -->
+  <script>
+    const cookieBanner = document.getElementById('cookie-banner');
+    const footerCookieSettings = document.getElementById('footer-cookie-settings');
+    const consentKey = 'inciBalikAnalyticsConsent';
+
+    function showCookieBanner() {
+      cookieBanner.style.display = 'block';
+    }
+
+    function hideCookieBanner() {
+      cookieBanner.style.display = 'none';
+    }
+
+    function clearAnalyticsCookies() {
+      const cookieNames = document.cookie
+        .split(';')
+        .map(cookie => cookie.trim().split('=')[0])
+        .filter(name => name === '_ga' || name.startsWith('_ga_'));
+
+      const host = window.location.hostname;
+      const domains = [''];
+
+      if (host && host !== 'localhost') {
+        domains.push(host, '.' + host);
+
+        if (host === 'incibalikmenu.com' || host.endsWith('.incibalikmenu.com')) {
+          domains.push('incibalikmenu.com', '.incibalikmenu.com');
+        }
+      }
+
+      cookieNames.forEach(name => {
+        domains.forEach(domain => {
+          const domainPart = domain ? '; domain=' + domain : '';
+
+          document.cookie =
+            name + '=; Max-Age=0; path=/' + domainPart;
+        });
+      });
+    }
+
+    if (!localStorage.getItem(consentKey)) {
+      showCookieBanner();
+    }
+
+    document.getElementById('cookie-accept').addEventListener('click', () => {
+      localStorage.setItem(consentKey, 'accepted');
+      loadAnalytics();
+      hideCookieBanner();
+    });
+
+    document.getElementById('cookie-reject').addEventListener('click', () => {
+      localStorage.setItem(consentKey, 'rejected');
+
+      clearAnalyticsCookies();
+
+      if (window.analyticsLoaded) {
+        window.location.reload();
+      } else {
+        hideCookieBanner();
+      }
+    });
+
+    footerCookieSettings.addEventListener('click', showCookieBanner);
+    // PRIVACY INFORMATION CONTROLS
+
+    const privacyDialog = document.getElementById('privacy-dialog');
+    const privacyClose = document.getElementById('privacy-close');
+
+    let privacyTrigger = null;
+
+    function openPrivacy(event) {
+      privacyTrigger = event.currentTarget;
+      privacyDialog.style.display = 'flex';
+      privacyClose.focus();
+    }
+
+    function closePrivacy() {
+      privacyDialog.style.display = 'none';
+
+      if (privacyTrigger) {
+        privacyTrigger.focus();
+      }
+    }
+
+    document.getElementById('footer-privacy-info')
+      .addEventListener('click', openPrivacy);
+
+    document.getElementById('cookie-privacy-link')
+      .addEventListener('click', openPrivacy);
+
+    privacyClose.addEventListener('click', closePrivacy);
+
+    privacyDialog.addEventListener('click', event => {
+      if (event.target === privacyDialog) {
+        closePrivacy();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (
+        event.key === 'Escape' &&
+        privacyDialog.style.display === 'flex'
+      ) {
+        closePrivacy();
+      }
+    });
+  </script>
+  <!-- COOKIE CONSENT END -->
 </body>
 
 </html>
