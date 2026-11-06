@@ -2172,7 +2172,12 @@
     function openPrivacy(event) {
       privacyTrigger = event.currentTarget;
       privacyDialog.style.display = 'flex';
-      privacyClose.focus();
+
+      // Pencereyi her açılışta en üste kaydır.
+      privacyDialog.scrollTop = 0;
+
+      // Kapat butonuna odaklanırken sayfanın kaymasını engelle.
+      privacyClose.focus({ preventScroll: true });
     }
 
     function closePrivacy() {
