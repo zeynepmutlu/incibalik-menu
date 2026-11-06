@@ -1839,74 +1839,84 @@
   <style>
     #cookie-banner {
       position: fixed;
-      bottom: 16px;
+      bottom: 14px;
       left: 50%;
       transform: translateX(-50%);
-      width: calc(100% - 32px);
-      max-width: 560px;
+      width: calc(100% - 28px);
+      max-width: 430px;
       background: #041427;
       border: 1px solid #E8D5A3;
-      border-radius: 14px;
-      padding: 20px;
+      border-radius: 12px;
+      padding: 14px 16px;
       box-sizing: border-box;
       z-index: 99999;
       box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.45),
-        0 0 18px rgba(232, 213, 163, 0.18);
+        0 8px 25px rgba(0, 0, 0, 0.45),
+        0 0 14px rgba(232, 213, 163, 0.15);
       color: #ffffff;
       font-family: inherit;
     }
 
     #cookie-banner h3 {
       color: #E8D5A3;
-      font-size: 17px;
-      margin: 0 0 10px;
-      text-shadow: 0 0 12px rgba(232, 213, 163, 0.25);
+      font-size: 15px;
+      margin: 0 0 7px;
+      text-shadow: 0 0 10px rgba(232, 213, 163, 0.2);
     }
 
     #cookie-banner p {
-      font-size: 13px;
-      line-height: 1.6;
-      margin: 0 0 16px;
+      font-size: 11.5px;
+      line-height: 1.45;
+      margin: 0 0 10px;
     }
 
     .cookie-buttons {
       display: flex;
-      gap: 10px;
+      gap: 8px;
     }
 
     .cookie-buttons button {
-      flex: 1;
-      padding: 11px;
-      border-radius: 8px;
+      padding: 9px 10px;
+      border-radius: 7px;
       cursor: pointer;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
       transition: all 0.2s ease;
+      min-height: 36px;
     }
 
+    /* Reddet: sade ve erişilebilir */
     #cookie-reject {
+      flex: 1;
       background: transparent;
       color: #E8D5A3;
-      border: 1px solid #E8D5A3;
+      border: 1px solid rgba(232, 213, 163, 0.65);
     }
 
     #cookie-reject:hover {
       background: rgba(232, 213, 163, 0.08);
     }
 
+    /* Kabul Et: altın renkli */
     #cookie-accept {
+      flex: 1;
       background: linear-gradient(135deg,
           #F5E7C5,
           #E8D5A3,
           #D6BA7D);
       color: #041427;
       border: 1px solid #E8D5A3;
-      box-shadow: 0 0 14px rgba(232, 213, 163, 0.18);
+      box-shadow: 0 2px 12px rgba(232, 213, 163, 0.25);
     }
 
     #cookie-accept:hover {
-      box-shadow: 0 0 20px rgba(232, 213, 163, 0.35);
+      box-shadow: 0 3px 18px rgba(232, 213, 163, 0.4);
+      filter: brightness(1.05);
+    }
+
+    .cookie-buttons button:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 3px;
     }
 
     /* PRIVACY INFORMATION MODAL */
@@ -1969,6 +1979,18 @@
       border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      #cookie-banner p {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .cookie-buttons button {
+        min-height: 42px;
+        font-size: 12px;
+      }
     }
   </style>
 
